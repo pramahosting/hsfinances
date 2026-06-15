@@ -38,7 +38,7 @@ export default function ServicesPage({ setPage }) {
   return (
     <>
       {/* PAGE HERO */}
-      <div style={{ background: "linear-gradient(135deg, #0a1e4a 0%, var(--navy) 100%)" }} className="page-hero">
+      <div className="page-hero">
         <div className="container">
           <div className="section-eyebrow" style={{ color:"var(--gold)" }}>Our Services</div>
           <h1>Full-Service Financial &amp; Technology Solutions</h1>
@@ -74,7 +74,7 @@ export default function ServicesPage({ setPage }) {
                   </p>
                   <div style={{ display:"flex", gap:16, flexWrap:"wrap", marginTop:28 }}>
                     <button className="btn-primary" onClick={() => setPage("contact")}>Get a Quote →</button>
-                    <a href="tel:0435064886" style={{ display:"inline-flex", alignItems:"center", gap:8, background:"var(--sky)", color:"var(--navy)", padding:"14px 24px", borderRadius:8, fontWeight:600, fontSize:".92rem" }}>📞 0435 064 886</a>
+                    <a href="tel:0435064886" style={{ display:"inline-flex", alignItems:"center", gap:8, background:"rgba(255,230,120,0.22)", color:"var(--charcoal)", padding:"14px 24px", borderRadius:8, fontWeight:600, fontSize:".92rem" }}>📞 0435 064 886</a>
                   </div>
                 </div>
                 <div style={{ borderRadius:16, overflow:"hidden", boxShadow:"var(--shadow-lg)" }}>
@@ -104,7 +104,7 @@ export default function ServicesPage({ setPage }) {
                   </p>
                   <div style={{ display:"flex", gap:16, flexWrap:"wrap", marginTop:28 }}>
                     <button className="btn-primary" onClick={() => setPage("contact")}>Discuss a Project →</button>
-                    <a href="mailto:info@hsfinances.com.au" style={{ display:"inline-flex", alignItems:"center", gap:8, background:"var(--sky)", color:"var(--navy)", padding:"14px 24px", borderRadius:8, fontWeight:600, fontSize:".92rem" }}>✉️ Email Us</a>
+                    <a href="mailto:info@hsfinances.com.au" style={{ display:"inline-flex", alignItems:"center", gap:8, background:"rgba(255,230,120,0.22)", color:"var(--charcoal)", padding:"14px 24px", borderRadius:8, fontWeight:600, fontSize:".92rem" }}>✉️ Email Us</a>
                   </div>
                 </div>
                 <div style={{ borderRadius:16, overflow:"hidden", boxShadow:"var(--shadow-lg)" }}>
@@ -140,7 +140,7 @@ export default function ServicesPage({ setPage }) {
           <div className="grid-4">
             {PROCESS_STEPS.map(([n, t, d]) => (
               <div key={t} className="value-card reveal">
-                <div style={{ width:44, height:44, background:"var(--navy)", color:"#fff", borderRadius:"50%", display:"flex", alignItems:"center", justifyContent:"center", fontFamily:"'Playfair Display',serif", fontWeight:700, fontSize:"1.1rem", margin:"0 auto 16px" }}>{n}</div>
+                <div style={{ width:44, height:44, background:"var(--charcoal)", color:"#fff", borderRadius:"50%", display:"flex", alignItems:"center", justifyContent:"center", fontFamily:"'Playfair Display',serif", fontWeight:700, fontSize:"1.1rem", margin:"0 auto 16px" }}>{n}</div>
                 <div className="value-title">{t}</div>
                 <p className="value-text">{d}</p>
               </div>

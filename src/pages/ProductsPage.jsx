@@ -36,7 +36,7 @@ export default function ProductsPage() {
   return (
     <>
       {/* PAGE HERO */}
-      <div style={{ background: "linear-gradient(135deg, #0f2252 0%, var(--navy) 100%)" }} className="page-hero">
+      <div className="page-hero">
         <div className="container">
           <div className="section-eyebrow" style={{ color:"var(--gold)" }}>Our Products</div>
           <h1>Software Built for Australian Finance</h1>
@@ -50,7 +50,7 @@ export default function ProductsPage() {
           {/* ── ACCFINO ── */}
           <div className="reveal" style={{ marginBottom: 80 }}>
             <div style={{ background:"var(--n100)", borderRadius:20, overflow:"hidden", boxShadow:"var(--shadow-lg)" }}>
-              <div style={{ background:"linear-gradient(135deg, var(--navy) 0%, #1a4ba0 100%)", padding:"52px 48px 40px" }}>
+              <div style={{ background:"linear-gradient(135deg, #2B2B2B 0%, #3D3820 100%)", padding:"52px 48px 40px" }}>
                 <div style={{ display:"inline-block", background:"rgba(212,160,33,.25)", color:"var(--gold)", fontSize:".75rem", fontWeight:700, padding:"5px 16px", borderRadius:100, letterSpacing:".2em", marginBottom:14, border:"1px solid rgba(212,160,33,.4)" }}>LIVE PRODUCT</div>
                 <div style={{ display:"flex", alignItems:"center", gap:24, flexWrap:"wrap" }}>
                   <div>
@@ -84,7 +84,7 @@ export default function ProductsPage() {
                     <p style={{ color:"var(--slate)", fontSize:".88rem" }}>Free base plan forever · Starter $0/mo · Pro $18/mo · Business $39/mo · All prices AUD inc. GST</p>
                   </div>
                   <a href="https://www.accfino.com" target="_blank" rel="noopener noreferrer"
-                     style={{ marginLeft:"auto", background:"var(--navy)", color:"#fff", padding:"12px 24px", borderRadius:8, fontWeight:600, fontSize:".88rem", flexShrink:0 }}>
+                     style={{ marginLeft:"auto", background:"var(--charcoal)", color:"#fff", padding:"12px 24px", borderRadius:8, fontWeight:600, fontSize:".88rem", flexShrink:0 }}>
                     Start Free →
                   </a>
                 </div>
@@ -153,7 +153,7 @@ export default function ProductsPage() {
                 </div>
                 <div style={{ display:"flex", gap:16, alignItems:"center", flexWrap:"wrap" }}>
                   <a href="mailto:info@hsfinances.com.au?subject=HSPayroll Waitlist"
-                     style={{ background:"var(--navy)", color:"#fff", padding:"12px 24px", borderRadius:8, fontWeight:600, fontSize:".88rem" }}>
+                     style={{ background:"var(--charcoal)", color:"#fff", padding:"12px 24px", borderRadius:8, fontWeight:600, fontSize:".88rem" }}>
                     Join Waitlist →
                   </a>
                   <span style={{ color:"var(--slate)", fontSize:".85rem" }}>Expected launch: Q3 2026</span>

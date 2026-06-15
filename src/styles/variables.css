@@ -1,41 +1,35 @@
 /* ─── GOOGLE FONTS ──────────────────────────────────────────────────────────── */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* ─── CSS TOKENS ────────────────────────────────────────────────────────────── */
+/* ─── DESIGN TOKENS ─────────────────────────────────────────────────────────── */
 :root {
-  --navy:      #0B2D6E;
   --gold:      #D4A021;
-  --sky:       #E8F1FB;
-  --slate:     #4B5C7A;
-  --n100:      #F5F7FA;
-  --n200:      #E4E9F2;
-  --n900:      #12192A;
+  --gold-dark: #8a6200;
+  --charcoal:  #2B2B2B;
+  --slate:     #555555;
+  --sky:       rgba(255, 230, 120, 0.18);
+  --n100:      #FAF8F2;
+  --n200:      #E5E3D8;
+  --n900:      #111111;
+
+  /* Gradient reused everywhere */
+  --hero-grad: linear-gradient(135deg, #E0E0DC 0%, #E8E5D8 40%, #D6A84A 75%, #C8900A 100%);
+
   --radius:    12px;
-  --shadow:    0 4px 24px rgba(11, 45, 110, 0.10);
-  --shadow-lg: 0 12px 48px rgba(11, 45, 110, 0.16);
+  --shadow:    0 4px 24px rgba(180,140,0,0.10);
+  --shadow-lg: 0 12px 48px rgba(180,140,0,0.16);
 }
 
 /* ─── RESET ─────────────────────────────────────────────────────────────────── */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-
 body {
   font-family: 'Inter', sans-serif;
-  color: var(--n900);
+  color: var(--charcoal);
   background: #fff;
   line-height: 1.6;
 }
-
-h1, h2, h3, h4 {
-  font-family: 'Playfair Display', serif;
-  line-height: 1.25;
-}
-
-a    { color: inherit; text-decoration: none; }
-img  { max-width: 100%; display: block; }
+h1, h2, h3, h4 { font-family: 'Playfair Display', serif; line-height: 1.25; }
+a      { color: inherit; text-decoration: none; }
+img    { max-width: 100%; display: block; }
 button { cursor: pointer; border: none; outline: none; font-family: 'Inter', sans-serif; }

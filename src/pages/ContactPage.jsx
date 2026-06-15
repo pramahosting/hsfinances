@@ -51,7 +51,7 @@ export default function ContactPage() {
   return (
     <>
       {/* PAGE HERO */}
-      <div style={{ background:"linear-gradient(135deg, #0a1e4a 0%, var(--navy) 100%)" }} className="page-hero">
+      <div className="page-hero">
         <div className="container">
           <div className="section-eyebrow" style={{ color:"var(--gold)" }}>Contact Us</div>
           <h1>Let's Talk Finances</h1>
@@ -150,7 +150,7 @@ export default function ContactPage() {
                   We'll review your situation and outline how we can help.
                 </p>
                 <a href={`mailto:${COMPANY.email}?subject=Free Consultation Request`}
-                   style={{ display:"inline-block", marginTop:14, background:"var(--navy)", color:"#fff", padding:"10px 22px", borderRadius:8, fontWeight:600, fontSize:".85rem" }}>
+                   style={{ display:"inline-block", marginTop:14, background:"var(--charcoal)", color:"#fff", padding:"10px 22px", borderRadius:8, fontWeight:600, fontSize:".85rem" }}>
                   Book Now →
                 </a>
               </div>

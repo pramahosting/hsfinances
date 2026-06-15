@@ -36,9 +36,9 @@ export default function AboutPage() {
   return (
     <>
       {/* PAGE HERO */}
-      <div style={{ background: "linear-gradient(135deg, var(--navy) 0%, #1a4ba0 100%)" }} className="page-hero">
+      <div className="page-hero">
         <div className="container">
-          <div className="section-eyebrow" style={{ color: "var(--gold)" }}>About Us</div>
+          <div className="section-eyebrow" style={{ color: "var(--gold-dark)" }}>About Us</div>
           <h1>Built on Trust. Driven by Numbers. Powered by Technology.</h1>
           <p>Headstart Finances Australia Pty Ltd is a Sydney-based financial services and technology company serving Australian businesses with precision and passion.</p>
         </div>
