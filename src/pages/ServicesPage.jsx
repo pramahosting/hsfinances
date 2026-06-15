@@ -23,6 +23,15 @@ const TECH_SERVICES = [
   { icon: "📦", title: "ERP & Systems Integration",     list: ["ERP implementation and customisation","Third-party system integration (Xero, MYOB, Salesforce)","Data migration and transformation","Business process automation (BPA)"] },
 ];
 
+const PRAMA_SERVICES = [
+  { icon: "🤖", title: "AI Solutions & Strategy",        list: ["End-to-end AI solution design and delivery","AI readiness assessment for your business","Custom AI model development and fine-tuning","AI integration with existing business systems"] },
+  { icon: "🕵️", title: "AI Agents Development",          list: ["Autonomous AI agent design and build","Multi-agent workflow orchestration","Web intelligence and research agents (LinkLens)","Task automation agents for business processes"] },
+  { icon: "⚙️", title: "Process Automation using AI",    list: ["Intelligent document processing and extraction","AI-powered workflow automation","RPA combined with AI for end-to-end automation","Business process optimisation using ML insights"] },
+  { icon: "🗂️", title: "RAG Development",                list: ["Retrieval-Augmented Generation (RAG) pipeline design","Custom knowledge base and vector store setup","LLM integration with your internal data","Semantic search and intelligent Q&A systems"] },
+  { icon: "🔗", title: "LLM Integration & Engineering",  list: ["OpenAI, Anthropic, and open-source LLM integration","Prompt engineering and optimisation","LLM API design and management","Fine-tuning and custom model training"] },
+  { icon: "📊", title: "AI Consulting & Training",        list: ["AI strategy workshops for leadership teams","Staff AI literacy and upskilling programs","AI governance and ethical AI frameworks","Ongoing AI advisory and innovation roadmaps"] },
+];
+
 const PROCESS_STEPS = [
   ["1","Discovery","Free 30-minute consultation to understand your needs, goals, and current situation."],
   ["2","Proposal","Clear, fixed-fee or retainer proposal tailored to your specific requirements and budget."],
@@ -32,8 +41,8 @@ const PROCESS_STEPS = [
 
 export default function ServicesPage({ setPage }) {
   useReveal();
-  const [tab, setTab] = useState("kasaar-financial");
-  const services = tab === "kasaar-financial" ? FINANCIAL_SERVICES : TECH_SERVICES;
+  const [tab, setTab] = useState("kasar-financial");
+  const services = tab === "kasar-financial" ? FINANCIAL_SERVICES : tab === "kasar-tech" ? TECH_SERVICES : PRAMA_SERVICES;
 
   return (
     <>
@@ -42,7 +51,7 @@ export default function ServicesPage({ setPage }) {
         <div className="container">
           <div className="section-eyebrow" style={{ color:"var(--gold)" }}>Our Services</div>
           <h1>Full-Service Financial &amp; Technology Solutions</h1>
-          <p>Delivered through two specialist arms — Kasaar Financial Services and Kasaar Technologies.</p>
+          <p>Delivered through three specialist arms — Kasar Financial Services, Kasar Technologies, and Prama AI Australia.</p>
         </div>
       </div>
 
@@ -51,20 +60,21 @@ export default function ServicesPage({ setPage }) {
 
           {/* TABS */}
           <div className="tab-nav reveal" style={{ marginBottom: 48 }}>
-            <button className={`tab-btn${tab === "kasaar-financial" ? " active" : ""}`} onClick={() => setTab("kasaar-financial")}>💼 Kasaar Financial Services</button>
-            <button className={`tab-btn${tab === "kasaar-tech"      ? " active" : ""}`} onClick={() => setTab("kasaar-tech")}>💻 Kasaar Technologies</button>
+            <button className={`tab-btn${tab === "kasar-financial" ? " active" : ""}`} onClick={() => setTab("kasar-financial")}>💼 Kasar Financial Services</button>
+            <button className={`tab-btn${tab === "kasar-tech"      ? " active" : ""}`} onClick={() => setTab("kasar-tech")}>💻 Kasar Technologies</button>
+            <button className={`tab-btn${tab === "prama-ai"        ? " active" : ""}`} onClick={() => setTab("prama-ai")}>🤖 Prama AI Australia</button>
           </div>
 
-          {/* KASAAR FINANCIAL INTRO */}
-          {tab === "kasaar-financial" && (
+          {/* KASAR FINANCIAL INTRO */}
+          {tab === "kasar-financial" && (
             <div className="reveal" style={{ marginBottom: 48 }}>
               <div className="grid-2" style={{ alignItems:"start" }}>
                 <div>
-                  <div className="section-eyebrow">Kasaar Financial Services</div>
+                  <div className="section-eyebrow">Kasar Financial Services</div>
                   <h2 className="section-title">Accounting &amp; Financial Advisory</h2>
                   <div className="divider" />
                   <p style={{ color:"var(--slate)", lineHeight:1.8, marginBottom:16 }}>
-                    Kasaar Financial Services is the accounting and financial advisory arm of Headstart Finances.
+                    Kasar Financial Services is the accounting and financial advisory arm of Headstart Finances.
                     We provide comprehensive financial management services to Australian businesses of all sizes —
                     from solo operators to established companies with complex structures.
                   </p>
@@ -78,28 +88,28 @@ export default function ServicesPage({ setPage }) {
                   </div>
                 </div>
                 <div style={{ borderRadius:16, overflow:"hidden", boxShadow:"var(--shadow-lg)" }}>
-                  <img src={IMG.services} alt="Kasaar Financial Services" style={{ width:"100%", height:360, objectFit:"cover" }} />
+                  <img src={IMG.services} alt="Kasar Financial Services" style={{ width:"100%", height:360, objectFit:"cover" }} />
                 </div>
               </div>
             </div>
           )}
 
-          {/* KASAAR TECH INTRO */}
-          {tab === "kasaar-tech" && (
+          {/* KASAR TECH INTRO */}
+          {tab === "kasar-tech" && (
             <div className="reveal" style={{ marginBottom: 48 }}>
               <div className="grid-2" style={{ alignItems:"start" }}>
                 <div>
-                  <div className="section-eyebrow">Kasaar Technologies</div>
+                  <div className="section-eyebrow">Kasar Technologies</div>
                   <h2 className="section-title">Technology Solutions &amp; Development</h2>
                   <div className="divider" />
                   <p style={{ color:"var(--slate)", lineHeight:1.8, marginBottom:16 }}>
-                    Kasaar Technologies is the technology and software development arm of Headstart Finances.
+                    Kasar Technologies is the technology and software development arm of Headstart Finances.
                     We deliver bespoke software projects, cloud infrastructure, AI solutions, and managed IT
                     support for businesses across Australia.
                   </p>
                   <p style={{ color:"var(--slate)", lineHeight:1.8 }}>
                     From custom ERP and accounting systems to AI agents and cloud migrations, our engineering team
-                    brings the same precision and reliability to technology that Kasaar Financial Services delivers
+                    brings the same precision and reliability to technology that Kasar Financial Services delivers
                     in finance.
                   </p>
                   <div style={{ display:"flex", gap:16, flexWrap:"wrap", marginTop:28 }}>
@@ -108,12 +118,53 @@ export default function ServicesPage({ setPage }) {
                   </div>
                 </div>
                 <div style={{ borderRadius:16, overflow:"hidden", boxShadow:"var(--shadow-lg)" }}>
-                  <img src={IMG.tech} alt="Kasaar Technologies" style={{ width:"100%", height:360, objectFit:"cover" }} />
+                  <img src={IMG.tech} alt="Kasar Technologies" style={{ width:"100%", height:360, objectFit:"cover" }} />
                 </div>
               </div>
             </div>
           )}
 
+
+          {/* PRAMA AI INTRO */}
+          {tab === "prama-ai" && (
+            <div className="reveal" style={{ marginBottom: 48 }}>
+              <div className="grid-2" style={{ alignItems:"start" }}>
+                <div>
+                  <div className="section-eyebrow">Prama AI Australia</div>
+                  <h2 className="section-title">AI Solutions &amp; Intelligent Automation</h2>
+                  <div className="divider" />
+                  <p style={{ color:"var(--slate)", lineHeight:1.8, marginBottom:16 }}>
+                    Prama AI Australia is the artificial intelligence arm of Headstart Finances, specialising
+                    in delivering cutting-edge AI solutions for Australian businesses. From autonomous AI agents
+                    to intelligent process automation and RAG-powered knowledge systems, we bring the power of
+                    modern AI to your operations.
+                  </p>
+                  <p style={{ color:"var(--slate)", lineHeight:1.8 }}>
+                    Our AI engineers and data scientists work closely with your team to design, build, and
+                    deploy AI solutions that deliver measurable business outcomes — not just technology for
+                    technology's sake.
+                  </p>
+                  <div style={{ display:"flex", gap:16, flexWrap:"wrap", marginTop:28 }}>
+                    <a href="https://www.prama-ai.com" target="_blank" rel="noopener noreferrer" className="btn-primary">Visit Prama AI →</a>
+                    <button className="btn-outline" style={{ color:"var(--charcoal)", borderColor:"rgba(43,43,43,.4)" }} onClick={() => setPage("contact")}>Book AI Consultation</button>
+                  </div>
+                  <div className="highlight-box" style={{ marginTop:28 }}>
+                    <p><strong style={{ color:"var(--charcoal)" }}>LinkLens</strong> — our AI-powered web intelligence agent — is a flagship product of Prama AI, enabling businesses to automate complex research and data extraction workflows.</p>
+                  </div>
+                </div>
+                <div style={{ borderRadius:16, overflow:"hidden", boxShadow:"var(--shadow-lg)", background:"linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)", padding:"48px 40px", display:"flex", flexDirection:"column", justifyContent:"center", minHeight:360 }}>
+                  <div style={{ fontSize:"3.5rem", marginBottom:24, textAlign:"center" }}>🤖</div>
+                  <h3 style={{ color:"#fff", fontFamily:"'Playfair Display',serif", fontSize:"1.6rem", textAlign:"center", marginBottom:16 }}>Prama AI Australia</h3>
+                  <p style={{ color:"rgba(255,255,255,.75)", textAlign:"center", lineHeight:1.7, fontSize:".95rem" }}>AI Solutions · AI Agents · Process Automation · RAG Development</p>
+                  <div style={{ marginTop:28, display:"flex", flexWrap:"wrap", gap:10, justifyContent:"center" }}>
+                    {["AI Agents","RAG Pipelines","LLM Integration","Automation","LinkLens"].map(t => (
+                      <span key={t} style={{ background:"rgba(212,160,33,.2)", color:"var(--gold)", border:"1px solid rgba(212,160,33,.4)", fontSize:".78rem", fontWeight:600, padding:"4px 14px", borderRadius:100 }}>{t}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
           {/* SERVICE CARDS */}
           <div className="grid-3">
             {services.map((s, i) => (
