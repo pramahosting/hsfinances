@@ -32,8 +32,8 @@ const PROCESS_STEPS = [
 
 export default function ServicesPage({ setPage }) {
   useReveal();
-  const [tab, setTab] = useState("kasar-financial");
-  const services = tab === "kasar-financial" ? FINANCIAL_SERVICES : TECH_SERVICES;
+  const [tab, setTab] = useState("kasaar-financial");
+  const services = tab === "kasaar-financial" ? FINANCIAL_SERVICES : TECH_SERVICES;
 
   return (
     <>
@@ -42,7 +42,7 @@ export default function ServicesPage({ setPage }) {
         <div className="container">
           <div className="section-eyebrow" style={{ color:"var(--gold)" }}>Our Services</div>
           <h1>Full-Service Financial &amp; Technology Solutions</h1>
-          <p>Delivered through two specialist arms — Kasar Financial Services and Kasar Technologies.</p>
+          <p>Delivered through two specialist arms — Kasaar Financial Services and Kasaar Technologies.</p>
         </div>
       </div>
 
@@ -51,20 +51,20 @@ export default function ServicesPage({ setPage }) {
 
           {/* TABS */}
           <div className="tab-nav reveal" style={{ marginBottom: 48 }}>
-            <button className={`tab-btn${tab === "kasar-financial" ? " active" : ""}`} onClick={() => setTab("kasar-financial")}>💼 Kasar Financial Services</button>
-            <button className={`tab-btn${tab === "kasar-tech"      ? " active" : ""}`} onClick={() => setTab("kasar-tech")}>💻 Kasar Technologies</button>
+            <button className={`tab-btn${tab === "kasaar-financial" ? " active" : ""}`} onClick={() => setTab("kasaar-financial")}>💼 Kasaar Financial Services</button>
+            <button className={`tab-btn${tab === "kasaar-tech"      ? " active" : ""}`} onClick={() => setTab("kasaar-tech")}>💻 Kasaar Technologies</button>
           </div>
 
-          {/* KASAR FINANCIAL INTRO */}
-          {tab === "kasar-financial" && (
+          {/* KASAAR FINANCIAL INTRO */}
+          {tab === "kasaar-financial" && (
             <div className="reveal" style={{ marginBottom: 48 }}>
               <div className="grid-2" style={{ alignItems:"start" }}>
                 <div>
-                  <div className="section-eyebrow">Kasar Financial Services</div>
+                  <div className="section-eyebrow">Kasaar Financial Services</div>
                   <h2 className="section-title">Accounting &amp; Financial Advisory</h2>
                   <div className="divider" />
                   <p style={{ color:"var(--slate)", lineHeight:1.8, marginBottom:16 }}>
-                    Kasar Financial Services is the accounting and financial advisory arm of Headstart Finances.
+                    Kasaar Financial Services is the accounting and financial advisory arm of Headstart Finances.
                     We provide comprehensive financial management services to Australian businesses of all sizes —
                     from solo operators to established companies with complex structures.
                   </p>
@@ -78,28 +78,28 @@ export default function ServicesPage({ setPage }) {
                   </div>
                 </div>
                 <div style={{ borderRadius:16, overflow:"hidden", boxShadow:"var(--shadow-lg)" }}>
-                  <img src={IMG.services} alt="Kasar Financial Services" style={{ width:"100%", height:360, objectFit:"cover" }} />
+                  <img src={IMG.services} alt="Kasaar Financial Services" style={{ width:"100%", height:360, objectFit:"cover" }} />
                 </div>
               </div>
             </div>
           )}
 
-          {/* KASAR TECH INTRO */}
-          {tab === "kasar-tech" && (
+          {/* KASAAR TECH INTRO */}
+          {tab === "kasaar-tech" && (
             <div className="reveal" style={{ marginBottom: 48 }}>
               <div className="grid-2" style={{ alignItems:"start" }}>
                 <div>
-                  <div className="section-eyebrow">Kasar Technologies</div>
+                  <div className="section-eyebrow">Kasaar Technologies</div>
                   <h2 className="section-title">Technology Solutions &amp; Development</h2>
                   <div className="divider" />
                   <p style={{ color:"var(--slate)", lineHeight:1.8, marginBottom:16 }}>
-                    Kasar Technologies is the technology and software development arm of Headstart Finances.
+                    Kasaar Technologies is the technology and software development arm of Headstart Finances.
                     We deliver bespoke software projects, cloud infrastructure, AI solutions, and managed IT
                     support for businesses across Australia.
                   </p>
                   <p style={{ color:"var(--slate)", lineHeight:1.8 }}>
                     From custom ERP and accounting systems to AI agents and cloud migrations, our engineering team
-                    brings the same precision and reliability to technology that Kasar Financial Services delivers
+                    brings the same precision and reliability to technology that Kasaar Financial Services delivers
                     in finance.
                   </p>
                   <div style={{ display:"flex", gap:16, flexWrap:"wrap", marginTop:28 }}>
@@ -108,7 +108,7 @@ export default function ServicesPage({ setPage }) {
                   </div>
                 </div>
                 <div style={{ borderRadius:16, overflow:"hidden", boxShadow:"var(--shadow-lg)" }}>
-                  <img src={IMG.tech} alt="Kasar Technologies" style={{ width:"100%", height:360, objectFit:"cover" }} />
+                  <img src={IMG.tech} alt="Kasaar Technologies" style={{ width:"100%", height:360, objectFit:"cover" }} />
                 </div>
               </div>
             </div>
