@@ -20,7 +20,7 @@ const TESTIMONIALS = [
 ];
 
 const PRODUCTS_TEASER = [
-  { name: "Accfino",   tag: "Live Product",       desc: "AI-powered accounting with ML cash flow forecasting, crypto CGT, open banking, and BAS lodgement. Built and hosted in Australia.", link: "https://www.accfino.com",           color: "var(--navy)" },
+  { name: "Accfino",   tag: "Live Product",       desc: "AI-powered accounting with ML cash flow forecasting, crypto CGT, open banking, and BAS lodgement. Built and hosted in Australia.", link: "https://www.accfino.com",           color: "#0B2D6E" },
   { name: "LinkLens",  tag: "AI Agent Platform",  desc: "Intelligent AI agent platform under the Prama AI brand. Automate research, web intelligence, and knowledge workflows.",          link: "https://linklens.prama-ai.com",     color: "#2d3a52" },
   { name: "HSPayroll", tag: "Coming Soon",         desc: "A next-generation Australian payroll system with STP Phase 2, superannuation automation, and Fair Work compliance built in.",  link: null,                                color: "#7a4e00" },
 ];
