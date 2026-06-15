@@ -70,7 +70,7 @@ export default function HomePage({ setPage }) {
             ))}
           </div>
         </div>
-        <div className="scroll-hint"><span>SCROLL</span><div className="scroll-hint-arrow" /></div>
+
       </section>
 
       {/* ── FEATURES BAR ── */}
