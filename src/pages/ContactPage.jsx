@@ -21,7 +21,6 @@ const SERVICE_OPTIONS = [
 
 const CONTACT_ITEMS = [
   ["📍","Office Address",`${COMPANY.address}`],
-  ["📞","Phone",COMPANY.phone],
   ["✉️","Email",COMPANY.email],
   ["🕐","Business Hours","Mon – Fri: 9:00am – 5:30pm AEST\nSat: By appointment"],
 ];
