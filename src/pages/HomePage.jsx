@@ -62,7 +62,7 @@ export default function HomePage({ setPage }) {
         <div className="features-bar-inner">
           {[
             ["ATO Compliant","Fully compliant with all ATO regulations and reporting standards"],
-            ["CA Qualified","Supported by a team of Chartered Accountants (CA ANZ) certified professionals"],
+            ["CA & CPA Qualified","Supported by a team of CA ANZ and CPA Australia certified professionals"]
             ["Advanced Data Security","Your data is fully protected with industry-leading security technologies"],
             ["24-Hour Turnaround","Fast, reliable service with guaranteed response times"]
           ].map(([t, d]) => (
@@ -120,7 +120,7 @@ export default function HomePage({ setPage }) {
               <ul className="about-list">
                 {[
                   ["🏛️","Registered Australian company — ABN 88 656 265 860"],
-                  ["🎓","CA Australia qualified professionals"],
+                  ["🎓","CA and CPA Australia qualified professionals"],
                   ["🔒","ATO registered tax and BAS agents"],
                   ["💡","Innovators in FinTech through Accfino and LinkLens"],
                 ].map(([icon, text]) => (
