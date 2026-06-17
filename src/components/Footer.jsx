@@ -53,7 +53,7 @@ export default function Footer({ setPage }) {
           <div className="footer-col">
             <h4>Company</h4>
             <ul>
-              {[["About Us","about"],["Careers","about"],["Partners","about"],["Contact","contact"]].map(([label, pg]) => (
+              {[["About Us","about"],["Contact","contact"]].map(([label, pg]) => (
                 <li key={label}><span onClick={() => setPage(pg)}>{label}</span></li>
               ))}
             </ul>
