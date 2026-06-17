@@ -46,7 +46,7 @@ export default function HomePage({ setPage }) {
             <button className="btn-outline" onClick={() => setPage("contact")}>Talk to an Expert</button>
           </div>
           <div className="hero-stats">
-            {[["200+","Clients Served"],["$50M+","Finance Managed"],["7+","Years Experience"],["99%","Compliance Rate"]].map(([n, l]) => (
+            {[["$20M+","Finance Managed"],["7+","Years Experience"],["99%","Compliance Rate"]].map(([n, l]) => (
               <div key={l} className="hero-stat">
                 <div className="hero-stat-num">{n}</div>
                 <div className="hero-stat-label">{l}</div>
