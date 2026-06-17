@@ -61,10 +61,10 @@ export default function HomePage({ setPage }) {
       <div className="features-bar">
         <div className="features-bar-inner">
           {[
-            ["ATO Registered","Fully compliant with all ATO requirements and reporting standards"],
-            ["CPA Qualified","Team of CPA Australia and CA ANZ certified professionals"],
-            ["AU Data Residency","Your data never leaves Australian infrastructure — ever"],
-            ["24hr Turnaround","Fast, reliable service with guaranteed response times"],
+            ["ATO Compliant","Fully compliant with all ATO regulations and reporting standards"],
+            ["CA Qualified","Supported by a team of Chartered Accountants (CA ANZ) certified professionals"],
+            ["Advanced Data Security","Your data is fully protected with industry-leading security technologies"],
+            ["24-Hour Turnaround","Fast, reliable service with guaranteed response times"]
           ].map(([t, d]) => (
             <div key={t} className="feat-item">
               <div className="feat-num">✓</div>
