@@ -14,16 +14,6 @@ const VALUES = [
   { icon: "⚡", title: "Responsiveness",  text: "Fast turnaround, clear communication, and support when you need it most." },
 ];
 
-
-const PARTNERS = ["CPA Australia","Chartered Accountants ANZ","Xero Partner","MYOB Certified","AWS Partner","Tax Practitioners Board"];
-
-const CAREERS = [
-  { type: "Full-Time", title: "Senior Accountant / CPA",        location: "Sydney CBD, NSW",    desc: "5+ years ATO compliance, BAS, GST, STP experience." },
-  { type: "Full-Time", title: "Software Engineer – FinTech",     location: "Hybrid / Remote",   desc: "React, FastAPI, PostgreSQL. Experience with financial systems preferred." },
-  { type: "Contract",  title: "BAS Agent",                       location: "Sydney CBD / Remote", desc: "Registered BAS agent for client lodgement support." },
-  { type: "Part-Time", title: "Financial Analyst",               location: "Sydney CBD, NSW",    desc: "Modelling, forecasting, and management reporting for SME clients." },
-];
-
 export default function AboutPage() {
   useReveal();
   const [tab, setTab] = useState("story");
@@ -43,7 +33,7 @@ export default function AboutPage() {
       <section className="section">
         <div className="container">
           <div className="tab-nav">
-            {[["story","Our Story"],["values","Our Values"],["careers","Careers"],["partners","Partners"]].map(([k, l]) => (
+            {[["story","Our Story"],["values","Our Values"]].map(([k, l]) => (
               <button key={k} className={`tab-btn${tab === k ? " active" : ""}`} onClick={() => setTab(k)}>{l}</button>
             ))}
           </div>
