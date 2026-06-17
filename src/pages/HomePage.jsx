@@ -62,7 +62,7 @@ export default function HomePage({ setPage }) {
         <div className="features-bar-inner">
           {[
             ["ATO Compliant","Fully compliant with all ATO regulations and reporting standards"],
-            ["CA & CPA Qualified","Supported by a team of CA ANZ and CPA Australia certified professionals"]
+            ["CA & CPA Qualified","Supported by a team of CA ANZ and CPA Australia certified professionals"],
             ["Advanced Data Security","Your data is fully protected with industry-leading security technologies"],
             ["24-Hour Turnaround","Fast, reliable service with guaranteed response times"]
           ].map(([t, d]) => (
