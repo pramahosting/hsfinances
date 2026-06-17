@@ -63,7 +63,7 @@ export default function Footer({ setPage }) {
 
         {/* BOTTOM BAR */}
         <div className="footer-bottom">
-          <div>© 2026 {COMPANY.name}. All rights reserved. ABN {COMPANY.abn}.</div>
+          <div>© 2026 {COMPANY.name}. All rights reserved.</div>
           <div className="footer-legal">
             <a href={LEGAL.terms}   target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a>
             <a href={LEGAL.privacy} target="_blank" rel="noopener noreferrer">Privacy &amp; Security</a>
