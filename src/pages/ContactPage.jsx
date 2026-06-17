@@ -24,7 +24,6 @@ const CONTACT_ITEMS = [
   ["📞","Phone",COMPANY.phone],
   ["✉️","Email",COMPANY.email],
   ["🕐","Business Hours","Mon – Fri: 9:00am – 5:30pm AEST\nSat: By appointment"],
-  ["🔢","ABN",COMPANY.abn],
 ];
 
 export default function ContactPage() {
