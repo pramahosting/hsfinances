@@ -120,7 +120,7 @@ export default function HomePage({ setPage }) {
               <ul className="about-list">
                 {[
                   ["🏛️","Registered Australian company — ABN 88 656 265 860"],
-                  ["🎓","CPA Australia and CA ANZ qualified professionals"],
+                  ["🎓","CA Australia qualified professionals"],
                   ["🔒","ATO registered tax and BAS agents"],
                   ["💡","Innovators in FinTech through Accfino and LinkLens"],
                 ].map(([icon, text]) => (
