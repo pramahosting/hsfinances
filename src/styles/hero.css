@@ -30,7 +30,7 @@
 .hero h1 em { color: var(--gold); font-style: normal; }
 .hero-sub { font-size: 1.1rem; color: rgba(255,255,255,.88); max-width: 600px; margin: 0 auto 40px; font-weight: 400; line-height: 1.75; }
 .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-.hero-stats { display: flex; justify-content: center; gap: 48px; margin-top: 64px; flex-wrap: wrap; }
+.hero-stats { display: flex; justify-content: center; gap: 48px; margin-top: 64px; margin-bottom: 80px; flex-wrap: wrap; }
 .hero-stat         { text-align: center; color: #fff; }
 .hero-stat-num     { font-family: 'Playfair Display',serif; font-size: 2rem; font-weight: 700; color: #F5EDD0; line-height: 1; }
 .hero-stat-label   { font-size: .78rem; color: rgba(255,255,255,.75); font-weight: 600; margin-top: 4px; text-transform: uppercase; letter-spacing: .1em; }
@@ -45,9 +45,9 @@
   background: var(--hero-grad);
   border-bottom: 2px solid rgba(212,160,33,.2);
 }
-.page-hero .section-eyebrow { color: #F5EDD0; letter-spacing: .2em; }
-.page-hero h1  { color: #fff; text-shadow: 0 2px 12px rgba(0,0,0,.25); font-size: clamp(2rem,4vw,3rem); max-width: 700px; margin: 12px auto; }
-.page-hero p   { color: rgba(255,255,255,.85); font-size: 1.05rem; max-width: 580px; margin: 20px auto 0; line-height: 1.75; }
+.page-hero .section-eyebrow { color: var(--gold); font-size: .85rem; font-weight: 700; letter-spacing: .25em; text-shadow: 0 1px 8px rgba(0,0,0,.3); }
+.page-hero h1  { color: #fff; text-shadow: 0 2px 16px rgba(0,0,0,.4); font-size: clamp(2rem,4vw,3.2rem); max-width: 700px; margin: 12px auto; font-weight: 700; }
+.page-hero p   { color: rgba(255,255,255,.92); font-size: 1.08rem; max-width: 580px; margin: 20px auto 0; line-height: 1.75; text-shadow: 0 1px 6px rgba(0,0,0,.2); }
 
 /* ─── FEATURES BAR ───────────────────────────────────────────────────────────── */
 .features-bar        { background: var(--charcoal); padding: 48px 24px; border-top: 3px solid var(--gold); }
