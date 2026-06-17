@@ -121,7 +121,7 @@ export default function HomePage({ setPage }) {
                 {[
                   ["🏛️","Registered Australian company — ABN 88 656 265 860"],
                   ["🎓","CA and CPA Australia qualified professionals"],
-                  ["🚀","AI-powered products, expertly projects delivered"],
+                  ["🚀","AI-powered products. Projects expertly delivered"],
                   ["💡","Innovators in FinTech through Accfino and LinkLens"],
                 ].map(([icon, text]) => (
                   <li key={text}><span className="icon">{icon}</span>{text}</li>
