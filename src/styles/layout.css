@@ -10,6 +10,7 @@
 
 /* ─── SECTION HEADERS ────────────────────────────────────────────────────────── */
 .section-eyebrow { font-size: .75rem; font-weight: 700; color: var(--gold-dark); letter-spacing: .2em; text-transform: uppercase; margin-bottom: 12px; }
+.page-hero .section-eyebrow { color: #FFD700 !important; font-size: .88rem !important; font-weight: 800 !important; letter-spacing: .28em !important; text-shadow: 0 0 20px rgba(255,215,0,.6), 0 2px 8px rgba(0,0,0,.4) !important; }
 .section-title   { font-size: clamp(1.7rem,3.5vw,2.6rem); color: var(--charcoal); margin-bottom: 16px; }
 .section-lead    { font-size: 1.05rem; color: var(--slate); max-width: 620px; line-height: 1.75; }
 .section-header          { margin-bottom: 56px; }
