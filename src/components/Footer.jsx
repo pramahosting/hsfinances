@@ -11,9 +11,7 @@ export default function Footer({ setPage }) {
           <div className="footer-brand">
             <div className="footer-brand-logo">
               <img src="/data/hsflogo.png" alt="Headstart Finances Logo" />
-              <h3>
-                Headstart Finances Australia<br />
-              </h3>
+              <h3>Headstart Finances Australia</h3>
             </div>
             <p>Expert financial services and technology solutions for Australian businesses. Trusted, ATO-compliant, and future-ready.</p>
             <div className="footer-meta">
@@ -27,7 +25,15 @@ export default function Footer({ setPage }) {
           <div className="footer-col">
             <h4>Services</h4>
             <ul>
-              {["BAS & GST Compliance","Bookkeeping & Accounting","Payroll & Super","Tax Advisory","CFO-as-a-Service","Technology Solutions"].map((s) => (
+              {[
+                "BAS & GST Compliance",
+                "Bookkeeping & Accounting",
+                "Payroll & Super",
+                "Tax Advisory",
+                "CFO-as-a-Service",
+                "Project & Product Management",
+                "AI & Automation Solutions",
+              ].map((s) => (
                 <li key={s}><span onClick={() => setPage("services")}>{s}</span></li>
               ))}
             </ul>

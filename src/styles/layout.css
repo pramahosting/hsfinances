@@ -27,11 +27,11 @@
 }
 .btn-primary:hover { background: #b8880f; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212,160,33,.45); }
 .btn-outline {
-  background: transparent; color: var(--charcoal); font-weight: 600;
+  background: transparent; color: #fff; font-weight: 600;
   padding: 14px 36px; border-radius: 8px; font-size: .95rem;
-  border: 1.5px solid rgba(43,43,43,.4); transition: .25s;
+  border: 1.5px solid rgba(255,255,255,.55); transition: .25s;
 }
-.btn-outline:hover { border-color: var(--charcoal); background: rgba(43,43,43,.06); transform: translateY(-2px); }
+.btn-outline:hover { border-color: #fff; background: rgba(255,255,255,.1); transform: translateY(-2px); }
 
 /* ─── MISC ───────────────────────────────────────────────────────────────────── */
 .badge      { display: inline-block; padding: 4px 14px; border-radius: 100px; font-size: .75rem; font-weight: 600; letter-spacing: .08em; }

@@ -13,7 +13,7 @@
   --n900:      #111111;
 
   /* Gradient reused everywhere */
-  --hero-grad: linear-gradient(135deg, #F5EDD0 0%, #E8D5A0 50%, #C9A855 100%);
+  --hero-grad: linear-gradient(135deg, #1a1a2e 0%, #4a2c6e 25%, #8b4513 55%, #C9A855 80%, #F5EDD0 100%);
 
   --radius:    12px;
   --shadow:    0 4px 24px rgba(180,140,0,0.10);

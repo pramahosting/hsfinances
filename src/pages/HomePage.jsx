@@ -10,13 +10,13 @@ const SERVICES_OVERVIEW = [
   { icon: "💼", title: "Accounting & Bookkeeping", text: "Full-cycle bookkeeping, P&L statements, balance sheets, and month-end close handled by experts." },
   { icon: "🤖", title: "AI-Powered Software",    text: "Accfino and LinkLens bring automation, ML forecasting, and intelligent workflows to your finance team." },
   { icon: "💰", title: "Payroll Management",     text: "STP Phase 2 compliant payroll, superannuation, PAYG and Fair Work Act adherence." },
-  { icon: "💻", title: "Technology Solutions",   text: "Bespoke software development, cloud migrations, and managed IT support through Kasar Technologies." },
+  { icon: "💻", title: "Technology Solutions",   text: "Bespoke software development, cloud migrations, and managed IT support through our technology team." },
 ];
 
 const TESTIMONIALS = [
   { q: "Headstart streamlined our entire finance function. Our BAS is always on time and we sleep easy at ATO time.", name: "Angela T.", role: "Director, Sydney Retail Group" },
   { q: "The Accfino platform transformed how we manage cash flow. The AI reconciliation alone saves my accountant 4 hours a month.", name: "Marcus B.", role: "Founder, Tech Startup Melbourne" },
-  { q: "Kasar Technologies delivered our custom ERP on time and on budget. Exceptional team.", name: "Priya S.", role: "COO, Manufacturing SME" },
+  { q: "The technology team delivered our custom ERP on time and on budget. Exceptional work.", name: "Priya S.", role: "COO, Manufacturing SME" },
 ];
 
 const PRODUCTS_TEASER = [
@@ -30,22 +30,6 @@ export default function HomePage({ setPage }) {
 
   return (
     <>
-      {/* ── TICKER ── */}
-      <div className="ticker">
-        <div className="ticker-inner">
-          {[0, 1].map((i) => (
-            <span key={i} className="ticker-item">
-              ATO Compliant <span className="ticker-sep">★</span>
-              GST &amp; BAS Specialists <span className="ticker-sep">★</span>
-              STP Phase 2 Ready <span className="ticker-sep">★</span>
-              AI-Powered Accounting <span className="ticker-sep">★</span>
-              Australian Owned &amp; Operated <span className="ticker-sep">★</span>
-              Sydney CBD Office <span className="ticker-sep">★</span>
-            </span>
-          ))}
-        </div>
-      </div>
-
       {/* ── HERO ── */}
       <section className="hero">
         <div className="hero-bg" style={{ backgroundImage: `url('${IMG.hero}')` }} />

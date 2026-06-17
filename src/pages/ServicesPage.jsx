@@ -14,22 +14,26 @@ const FINANCIAL_SERVICES = [
   { icon: "📈", title: "Financial Advisory",        list: ["Business restructuring and entity setup advice","Mergers, acquisitions, and due diligence support","Working capital management","Growth strategy and financial roadmaps"] },
 ];
 
-const TECH_SERVICES = [
-  { icon: "💻", title: "Bespoke Software Development", list: ["Custom web applications (React, FastAPI, Django)","Mobile app development (iOS/Android)","API design, development, and integration","Legacy system modernisation"] },
-  { icon: "☁️", title: "Cloud Infrastructure",          list: ["AWS, Azure, and GCP architecture and migration","Docker/Kubernetes containerisation","DevOps pipeline setup (CI/CD)","Cost optimisation and infrastructure audits"] },
-  { icon: "🤖", title: "AI & Machine Learning",         list: ["AI agent and automation development","LLM integration and RAG pipeline design","ML model training and deployment","Data engineering and analytics platforms"] },
-  { icon: "🔒", title: "Cybersecurity",                 list: ["Security audits and penetration testing","OWASP compliance assessments","Incident response planning","Security awareness training for staff"] },
-  { icon: "🖥️", title: "Managed IT Support",            list: ["24/7 infrastructure monitoring","Helpdesk and end-user support","Software licensing and procurement","IT strategy and roadmap planning"] },
-  { icon: "📦", title: "ERP & Systems Integration",     list: ["ERP implementation and customisation","Third-party system integration (Xero, MYOB, Salesforce)","Data migration and transformation","Business process automation (BPA)"] },
+const PPM_SERVICES = [
+  // ── Project Management ──
+  { icon: "🚀", title: "Project Delivery",           list: ["End-to-end project management","Agile and waterfall delivery frameworks","Software development project management","Software implementation projects","Release management"] },
+  { icon: "📋", title: "Project Planning & Control", list: ["Budget tracking and reporting","Schedule management","Resource planning","Earned value analysis"] },
+  { icon: "✅", title: "Quality Assurance & Testing", list: ["Test planning and execution","Project process improvement","Project management process redesign"] },
+  { icon: "👥", title: "Leadership & Team Management",list: ["Cross-functional team leadership","Stakeholder & communication management","Executive communications and status reporting","Vendor management","Client management","Conflict resolution"] },
+  // ── Product Management ──
+  { icon: "🔍", title: "Market Analysis & Discovery", list: ["Competitive analysis","Market sizing & research","Analysis of market dynamics and new entrants","User research and customer interviews","DVF discovery framework","Customer journey mapping","Persona development","Pretotyping & opportunity mapping","Requirements gathering"] },
+  { icon: "🎯", title: "Product Strategy",            list: ["AI product strategy development","Product positioning & roadmap development","Business model design","Product-market fit analysis","Investment readiness","Brand positioning","Product portfolio improvement"] },
+  { icon: "⚡", title: "Product Delivery",            list: ["Agile product development methodology","Sprint planning & user story creation","Acceptance criteria definition","Scope management","Risk mitigation strategy development"] },
+  { icon: "🌐", title: "Ecosystem Development",       list: ["Development of external partnerships","Management and pilot execution of external startups","Accelerator program execution","Executive-level product endorsement"] },
 ];
 
 const PRAMA_SERVICES = [
-  { icon: "🤖", title: "AI Solutions & Strategy",        list: ["End-to-end AI solution design and delivery","AI readiness assessment for your business","Custom AI model development and fine-tuning","AI integration with existing business systems"] },
-  { icon: "🕵️", title: "AI Agents Development",          list: ["Autonomous AI agent design and build","Multi-agent workflow orchestration","Web intelligence and research agents (LinkLens)","Task automation agents for business processes"] },
-  { icon: "⚙️", title: "Process Automation using AI",    list: ["Intelligent document processing and extraction","AI-powered workflow automation","RPA combined with AI for end-to-end automation","Business process optimisation using ML insights"] },
-  { icon: "🗂️", title: "RAG Development",                list: ["Retrieval-Augmented Generation (RAG) pipeline design","Custom knowledge base and vector store setup","LLM integration with your internal data","Semantic search and intelligent Q&A systems"] },
-  { icon: "🔗", title: "LLM Integration & Engineering",  list: ["OpenAI, Anthropic, and open-source LLM integration","Prompt engineering and optimisation","LLM API design and management","Fine-tuning and custom model training"] },
-  { icon: "📊", title: "AI Consulting & Training",        list: ["AI strategy workshops for leadership teams","Staff AI literacy and upskilling programs","AI governance and ethical AI frameworks","Ongoing AI advisory and innovation roadmaps"] },
+  { icon: "🤖", title: "AI Solutions & Strategy",       list: ["End-to-end AI solution design and delivery","AI readiness assessment for your business","Custom AI model development and fine-tuning","AI integration with existing business systems"] },
+  { icon: "🕵️", title: "AI Agents Development",         list: ["Autonomous AI agent design and build","Multi-agent workflow orchestration","Web intelligence and research agents (LinkLens)","Task automation agents for business processes"] },
+  { icon: "⚙️", title: "Process Automation using AI",   list: ["Intelligent document processing and extraction","AI-powered workflow automation","RPA combined with AI for end-to-end automation","Business process optimisation using ML insights"] },
+  { icon: "🗂️", title: "RAG Development",               list: ["Retrieval-Augmented Generation (RAG) pipeline design","Custom knowledge base and vector store setup","LLM integration with your internal data","Semantic search and intelligent Q&A systems"] },
+  { icon: "🔗", title: "LLM Integration & Engineering", list: ["OpenAI, Anthropic, and open-source LLM integration","Prompt engineering and optimisation","LLM API design and management","Fine-tuning and custom model training"] },
+  { icon: "📊", title: "AI Consulting & Training",       list: ["AI strategy workshops for leadership teams","Staff AI literacy and upskilling programs","AI governance and ethical AI frameworks","Ongoing AI advisory and innovation roadmaps"] },
 ];
 
 const PROCESS_STEPS = [
@@ -41,17 +45,17 @@ const PROCESS_STEPS = [
 
 export default function ServicesPage({ setPage }) {
   useReveal();
-  const [tab, setTab] = useState("kasar-financial");
-  const services = tab === "kasar-financial" ? FINANCIAL_SERVICES : tab === "kasar-tech" ? TECH_SERVICES : PRAMA_SERVICES;
+  const [tab, setTab] = useState("financial");
+  const services = tab === "financial" ? FINANCIAL_SERVICES : tab === "ppm" ? PPM_SERVICES : PRAMA_SERVICES;
 
   return (
     <>
       {/* PAGE HERO */}
       <div className="page-hero">
         <div className="container">
-          <div className="section-eyebrow" style={{ color:"var(--gold)" }}>Our Services</div>
+          <div className="section-eyebrow" style={{ color:"var(--gold-dark)" }}>Our Services</div>
           <h1>Full-Service Financial &amp; Technology Solutions</h1>
-          <p>Delivered through three specialist arms — Kasar Financial Services, Kasar Technologies, and Prama AI Australia.</p>
+          <p>Comprehensive financial, project, product, and AI services — all under one roof.</p>
         </div>
       </div>
 
@@ -60,104 +64,105 @@ export default function ServicesPage({ setPage }) {
 
           {/* TABS */}
           <div className="tab-nav reveal" style={{ marginBottom: 48 }}>
-            <button className={`tab-btn${tab === "kasar-financial" ? " active" : ""}`} onClick={() => setTab("kasar-financial")}>💼 Kasar Financial Services</button>
-            <button className={`tab-btn${tab === "kasar-tech"      ? " active" : ""}`} onClick={() => setTab("kasar-tech")}>💻 Kasar Technologies</button>
-            <button className={`tab-btn${tab === "prama-ai"        ? " active" : ""}`} onClick={() => setTab("prama-ai")}>🤖 Prama AI Australia</button>
+            <button className={`tab-btn${tab === "financial" ? " active" : ""}`} onClick={() => setTab("financial")}>💼 Financial Services</button>
+            <button className={`tab-btn${tab === "ppm"       ? " active" : ""}`} onClick={() => setTab("ppm")}>📋 Project &amp; Product Management</button>
+            <button className={`tab-btn${tab === "ai"        ? " active" : ""}`} onClick={() => setTab("ai")}>🤖 AI &amp; Automation Solutions</button>
           </div>
 
-          {/* KASAR FINANCIAL INTRO */}
-          {tab === "kasar-financial" && (
+          {/* FINANCIAL INTRO */}
+          {tab === "financial" && (
             <div className="reveal" style={{ marginBottom: 48 }}>
               <div className="grid-2" style={{ alignItems:"start" }}>
                 <div>
-                  <div className="section-eyebrow">Kasar Financial Services</div>
+                  <div className="section-eyebrow">Financial Services</div>
                   <h2 className="section-title">Accounting &amp; Financial Advisory</h2>
                   <div className="divider" />
                   <p style={{ color:"var(--slate)", lineHeight:1.8, marginBottom:16 }}>
-                    Kasar Financial Services is the accounting and financial advisory arm of Headstart Finances.
-                    We provide comprehensive financial management services to Australian businesses of all sizes —
-                    from solo operators to established companies with complex structures.
+                    Our financial services arm provides comprehensive accounting and financial management
+                    for Australian businesses of all sizes — from sole traders to established companies
+                    with complex structures.
                   </p>
                   <p style={{ color:"var(--slate)", lineHeight:1.8 }}>
-                    Our CPA Australia and CA ANZ certified team works as your dedicated financial partner — not
-                    just at tax time, but year-round.
+                    Our CPA Australia and CA ANZ certified team works as your dedicated financial partner —
+                    not just at tax time, but year-round.
                   </p>
                   <div style={{ display:"flex", gap:16, flexWrap:"wrap", marginTop:28 }}>
                     <button className="btn-primary" onClick={() => setPage("contact")}>Get a Quote →</button>
-                    <a href="tel:0435064886" style={{ display:"inline-flex", alignItems:"center", gap:8, background:"rgba(255,230,120,0.22)", color:"var(--charcoal)", padding:"14px 24px", borderRadius:8, fontWeight:600, fontSize:".92rem" }}>📞 0435 064 886</a>
+                    <a href="tel:0435064886" style={{ display:"inline-flex", alignItems:"center", gap:8, background:"rgba(212,160,33,.12)", color:"var(--charcoal)", padding:"14px 24px", borderRadius:8, fontWeight:600, fontSize:".92rem" }}>📞 0435 064 886</a>
                   </div>
                 </div>
                 <div style={{ borderRadius:16, overflow:"hidden", boxShadow:"var(--shadow-lg)" }}>
-                  <img src={IMG.services} alt="Kasar Financial Services" style={{ width:"100%", height:360, objectFit:"cover" }} />
+                  <img src={IMG.services} alt="Financial Services" style={{ width:"100%", height:360, objectFit:"cover" }} />
                 </div>
               </div>
             </div>
           )}
 
-          {/* KASAR TECH INTRO */}
-          {tab === "kasar-tech" && (
+          {/* PROJECT & PRODUCT INTRO */}
+          {tab === "ppm" && (
             <div className="reveal" style={{ marginBottom: 48 }}>
               <div className="grid-2" style={{ alignItems:"start" }}>
                 <div>
-                  <div className="section-eyebrow">Kasar Technologies</div>
-                  <h2 className="section-title">Technology Solutions &amp; Development</h2>
+                  <div className="section-eyebrow">Project &amp; Product Management</div>
+                  <h2 className="section-title">From Strategy to Delivery</h2>
                   <div className="divider" />
                   <p style={{ color:"var(--slate)", lineHeight:1.8, marginBottom:16 }}>
-                    Kasar Technologies is the technology and software development arm of Headstart Finances.
-                    We deliver bespoke software projects, cloud infrastructure, AI solutions, and managed IT
-                    support for businesses across Australia.
+                    Our Project &amp; Product Management practice covers the full lifecycle — from market
+                    analysis and product discovery through to Agile delivery, release management, and
+                    ecosystem development. We bring structured frameworks and experienced leadership to
+                    every engagement.
                   </p>
                   <p style={{ color:"var(--slate)", lineHeight:1.8 }}>
-                    From custom ERP and accounting systems to AI agents and cloud migrations, our engineering team
-                    brings the same precision and reliability to technology that Kasar Financial Services delivers
-                    in finance.
+                    Whether you need end-to-end project delivery or a product strategy that gets you to
+                    market faster, our team works alongside yours to make it happen.
                   </p>
                   <div style={{ display:"flex", gap:16, flexWrap:"wrap", marginTop:28 }}>
                     <button className="btn-primary" onClick={() => setPage("contact")}>Discuss a Project →</button>
-                    <a href="mailto:info@hsfinances.com.au" style={{ display:"inline-flex", alignItems:"center", gap:8, background:"rgba(255,230,120,0.22)", color:"var(--charcoal)", padding:"14px 24px", borderRadius:8, fontWeight:600, fontSize:".92rem" }}>✉️ Email Us</a>
+                    <a href="mailto:info@hsfinances.com.au" style={{ display:"inline-flex", alignItems:"center", gap:8, background:"rgba(212,160,33,.12)", color:"var(--charcoal)", padding:"14px 24px", borderRadius:8, fontWeight:600, fontSize:".92rem" }}>✉️ Email Us</a>
                   </div>
                 </div>
-                <div style={{ borderRadius:16, overflow:"hidden", boxShadow:"var(--shadow-lg)" }}>
-                  <img src={IMG.tech} alt="Kasar Technologies" style={{ width:"100%", height:360, objectFit:"cover" }} />
+                <div style={{ borderRadius:16, background:"linear-gradient(135deg, #1a2a1a 0%, #2d4a2d 100%)", padding:"48px 40px", display:"flex", flexDirection:"column", justifyContent:"center", minHeight:360, boxShadow:"var(--shadow-lg)" }}>
+                  <div style={{ fontSize:"3rem", textAlign:"center", marginBottom:20 }}>📋🎯</div>
+                  <h3 style={{ color:"#fff", fontFamily:"'Playfair Display',serif", fontSize:"1.4rem", textAlign:"center", marginBottom:16 }}>Project &amp; Product Management</h3>
+                  <div style={{ display:"flex", flexWrap:"wrap", gap:10, justifyContent:"center" }}>
+                    {["Agile","Waterfall","QA & Testing","Product Strategy","Roadmap","Ecosystem","Market Analysis","Discovery"].map(t => (
+                      <span key={t} style={{ background:"rgba(212,160,33,.2)", color:"var(--gold)", border:"1px solid rgba(212,160,33,.4)", fontSize:".75rem", fontWeight:600, padding:"4px 12px", borderRadius:100 }}>{t}</span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
           )}
 
-
-          {/* PRAMA AI INTRO */}
-          {tab === "prama-ai" && (
+          {/* AI INTRO */}
+          {tab === "ai" && (
             <div className="reveal" style={{ marginBottom: 48 }}>
               <div className="grid-2" style={{ alignItems:"start" }}>
                 <div>
-                  <div className="section-eyebrow">Prama AI Australia</div>
-                  <h2 className="section-title">AI Solutions &amp; Intelligent Automation</h2>
+                  <div className="section-eyebrow">AI &amp; Automation Solutions</div>
+                  <h2 className="section-title">Intelligent Automation for Your Business</h2>
                   <div className="divider" />
                   <p style={{ color:"var(--slate)", lineHeight:1.8, marginBottom:16 }}>
-                    Prama AI Australia is the artificial intelligence arm of Headstart Finances, specialising
-                    in delivering cutting-edge AI solutions for Australian businesses. From autonomous AI agents
-                    to intelligent process automation and RAG-powered knowledge systems, we bring the power of
-                    modern AI to your operations.
+                    Our AI &amp; Automation practice delivers cutting-edge artificial intelligence solutions
+                    for Australian businesses — from autonomous AI agents to intelligent process automation
+                    and RAG-powered knowledge systems.
                   </p>
                   <p style={{ color:"var(--slate)", lineHeight:1.8 }}>
-                    Our AI engineers and data scientists work closely with your team to design, build, and
-                    deploy AI solutions that deliver measurable business outcomes — not just technology for
-                    technology's sake.
+                    Our AI engineers work closely with your team to design, build, and deploy AI solutions
+                    that deliver measurable business outcomes. Powered by Prama AI Australia.
                   </p>
                   <div style={{ display:"flex", gap:16, flexWrap:"wrap", marginTop:28 }}>
                     <a href="https://www.prama-ai.com" target="_blank" rel="noopener noreferrer" className="btn-primary">Visit Prama AI →</a>
                     <button className="btn-outline" style={{ color:"var(--charcoal)", borderColor:"rgba(43,43,43,.4)" }} onClick={() => setPage("contact")}>Book AI Consultation</button>
                   </div>
-                  <div className="highlight-box" style={{ marginTop:28 }}>
-                    <p><strong style={{ color:"var(--charcoal)" }}>LinkLens</strong> — our AI-powered web intelligence agent — is a flagship product of Prama AI, enabling businesses to automate complex research and data extraction workflows.</p>
-                  </div>
+
                 </div>
-                <div style={{ borderRadius:16, overflow:"hidden", boxShadow:"var(--shadow-lg)", background:"linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)", padding:"48px 40px", display:"flex", flexDirection:"column", justifyContent:"center", minHeight:360 }}>
-                  <div style={{ fontSize:"3.5rem", marginBottom:24, textAlign:"center" }}>🤖</div>
-                  <h3 style={{ color:"#fff", fontFamily:"'Playfair Display',serif", fontSize:"1.6rem", textAlign:"center", marginBottom:16 }}>Prama AI Australia</h3>
-                  <p style={{ color:"rgba(255,255,255,.75)", textAlign:"center", lineHeight:1.7, fontSize:".95rem" }}>AI Solutions · AI Agents · Process Automation · RAG Development</p>
-                  <div style={{ marginTop:28, display:"flex", flexWrap:"wrap", gap:10, justifyContent:"center" }}>
-                    {["AI Agents","RAG Pipelines","LLM Integration","Automation","LinkLens"].map(t => (
+                <div style={{ borderRadius:16, background:"linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)", padding:"48px 40px", display:"flex", flexDirection:"column", justifyContent:"center", minHeight:360, boxShadow:"var(--shadow-lg)" }}>
+                  <div style={{ fontSize:"3.5rem", textAlign:"center", marginBottom:24 }}>🤖</div>
+                  <h3 style={{ color:"#fff", fontFamily:"'Playfair Display',serif", fontSize:"1.5rem", textAlign:"center", marginBottom:16 }}>AI &amp; Automation Solutions</h3>
+                  <p style={{ color:"rgba(255,255,255,.75)", textAlign:"center", lineHeight:1.7, fontSize:".92rem", marginBottom:20 }}>AI Solutions · AI Agents · Process Automation · RAG Development</p>
+                  <div style={{ display:"flex", flexWrap:"wrap", gap:10, justifyContent:"center" }}>
+                    {["AI Agents","RAG Pipelines","LLM Integration","Automation","LinkLens","Prama AI"].map(t => (
                       <span key={t} style={{ background:"rgba(212,160,33,.2)", color:"var(--gold)", border:"1px solid rgba(212,160,33,.4)", fontSize:".78rem", fontWeight:600, padding:"4px 14px", borderRadius:100 }}>{t}</span>
                     ))}
                   </div>
@@ -165,6 +170,7 @@ export default function ServicesPage({ setPage }) {
               </div>
             </div>
           )}
+
           {/* SERVICE CARDS */}
           <div className="grid-3">
             {services.map((s, i) => (
@@ -204,7 +210,7 @@ export default function ServicesPage({ setPage }) {
       <section className="cta-banner">
         <div className="container reveal">
           <h2>Start with a Free Consultation</h2>
-          <p>Talk to one of our Sydney-based experts about your financial or technology needs. No obligation, no jargon.</p>
+          <p>Talk to one of our Sydney-based experts about your financial, project, product, or AI needs.</p>
           <div className="cta-btns">
             <button className="btn-primary" onClick={() => setPage("contact")}>Contact Us Today →</button>
           </div>

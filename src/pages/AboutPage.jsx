@@ -14,11 +14,6 @@ const VALUES = [
   { icon: "⚡", title: "Responsiveness",  text: "Fast turnaround, clear communication, and support when you need it most." },
 ];
 
-const TEAM = [
-  { img: IMG.team2, name: "Sarah Mitchell", role: "Managing Director",    bio: "CPA qualified with 15+ years in Australian financial services. Former Big 4 senior manager." },
-  { img: IMG.team,  name: "James Kaur",     role: "Head of Technology",   bio: "Full-stack engineer and AI specialist. Architect of Accfino and the Prama AI platform." },
-  { img: IMG.team3, name: "Priya Sharma",   role: "Senior Financial Advisor", bio: "CA ANZ certified with expertise in SME financial strategy, tax planning, and ATO compliance." },
-];
 
 const PARTNERS = ["CPA Australia","Chartered Accountants ANZ","Xero Partner","MYOB Certified","AWS Partner","Tax Practitioners Board"];
 
@@ -48,7 +43,7 @@ export default function AboutPage() {
       <section className="section">
         <div className="container">
           <div className="tab-nav">
-            {[["story","Our Story"],["values","Our Values"],["team","Our Team"],["careers","Careers"],["partners","Partners"]].map(([k, l]) => (
+            {[["story","Our Story"],["values","Our Values"],["careers","Careers"],["partners","Partners"]].map(([k, l]) => (
               <button key={k} className={`tab-btn${tab === k ? " active" : ""}`} onClick={() => setTab(k)}>{l}</button>
             ))}
           </div>
@@ -175,7 +170,7 @@ export default function AboutPage() {
                 ))}
               </div>
               <div className="highlight-box reveal">
-                <p><strong style={{ color:"var(--navy)" }}>Technology Partners:</strong> Kasar Technologies maintains partnerships with AWS, Microsoft Azure, and leading open-source communities to deliver reliable, scalable infrastructure for our clients and products.</p>
+                <p><strong style={{ color:"var(--charcoal)" }}>Technology Partners:</strong> Our technology and AI teams maintain partnerships with AWS, Microsoft Azure, and leading open-source communities to deliver reliable, scalable infrastructure for our clients and products.</p>
               </div>
             </div>
           )}
