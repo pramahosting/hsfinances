@@ -17,7 +17,7 @@ export default function Footer({ setPage }) {
             <div className="footer-meta">
               <div>ABN: {COMPANY.abn}</div>
               <div>{COMPANY.address}</div>
-              <div>{COMPANY.email} · {COMPANY.phone}</div>
+              <div>{COMPANY.email}</div>
             </div>
           </div>
 
