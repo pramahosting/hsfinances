@@ -56,9 +56,8 @@ export default function AboutPage() {
                   and startups to established mid-market businesses across every sector.
                 </p>
                 <p style={{ color:"var(--slate)", lineHeight:1.8 }}>
-                  Through our service arms — Kasar Financial Services and Kasar Technologies — and our
-                  in-house SaaS products Accfino and LinkLens, we deliver end-to-end financial and
-                  technology solutions under one roof.
+                  Through our service arms and our in-house SaaS products Accfino and LinkLens,
+                  we deliver end-to-end financial and AI-Powered technology solutions under one roof.
                 </p>
                 <div className="highlight-box">
                   <p>
