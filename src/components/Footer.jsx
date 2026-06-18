@@ -10,7 +10,7 @@ const PILLARS = [
   {
     label: "📋 Project & Product",
     tab: "ppm",
-    items: ["Project Delivery", "Project Planning & Control", "QA & Testing", "Market Analysis & Discovery", "Product Strategy", "Product Delivery"],
+    items: ["Project Delivery", "Project Planning & Control", "Market Analysis & Discovery", "Product Strategy", "Product Delivery"],
   },
   {
     label: "🤖 AI & Automation",
@@ -30,7 +30,7 @@ export default function Footer({ setPage, setServiceTab }) {
       <div className="footer-inner">
         <div className="footer-grid">
 
-          {/* COL 1 — BRAND */}
+          {/* COL 1 — BRAND + QUICK LINKS inline */}
           <div className="footer-brand">
             <div className="footer-brand-logo">
               <img src="/data/hsflogo.png" alt="Headstart Finances Logo" />
@@ -42,6 +42,15 @@ export default function Footer({ setPage, setServiceTab }) {
               <div>{COMPANY.address}</div>
               <div><a href={`mailto:${COMPANY.email}`} style={{ color:"rgba(255,255,255,.45)" }}>{COMPANY.email}</a></div>
               <div><a href="tel:0435064886" style={{ color:"rgba(255,255,255,.45)" }}>0435 064 886</a></div>
+            </div>
+            {/* Quick Links inline below brand info */}
+            <div className="footer-quick-links">
+              {[["Home","home"],["About","about"],["Services","services"],["Products","products"],["Contact","contact"]].map(([label, pg], i) => (
+                <span key={label}>
+                  <span onClick={() => setPage(pg)}>{label}</span>
+                  {i < 4 && <span style={{ color:"rgba(255,255,255,.2)", margin:"0 6px" }}>|</span>}
+                </span>
+              ))}
             </div>
           </div>
 
@@ -55,16 +64,11 @@ export default function Footer({ setPage, setServiceTab }) {
                     <span onClick={() => goToService(pillar.tab)}>{item}</span>
                   </li>
                 ))}
-                <li style={{ marginTop: 8 }}>
-                  <span onClick={() => goToService(pillar.tab)} style={{ color:"var(--gold)", fontSize:".78rem", fontWeight:600 }}>
-                    View all →
-                  </span>
-                </li>
               </ul>
             </div>
           ))}
 
-          {/* COL 5 — PRODUCTS + QUICK LINKS */}
+          {/* COL 5 — PRODUCTS */}
           <div className="footer-col">
             <h4>📦 Products</h4>
             <ul>
@@ -72,21 +76,9 @@ export default function Footer({ setPage, setServiceTab }) {
               <li><a href="https://linklens.prama-ai.com" target="_blank" rel="noopener noreferrer">LinkLens</a></li>
               <li>
                 <span onClick={() => setPage("products")}>
-                  HSPayroll <span style={{ fontSize:".72rem", color:"var(--gold)" }}>Soon</span>
+                  HSPayroll <span style={{ fontSize:".7rem", color:"var(--gold)" }}>Soon</span>
                 </span>
               </li>
-              <li style={{ marginTop: 8 }}>
-                <span onClick={() => setPage("products")} style={{ color:"var(--gold)", fontSize:".78rem", fontWeight:600 }}>
-                  View all →
-                </span>
-              </li>
-            </ul>
-
-            <h4 style={{ marginTop: 22 }}>Quick Links</h4>
-            <ul>
-              {[["Home","home"],["About","about"],["Services","services"],["Products","products"],["Contact","contact"]].map(([label, pg]) => (
-                <li key={label}><span onClick={() => setPage(pg)}>{label}</span></li>
-              ))}
             </ul>
           </div>
 
@@ -106,6 +98,7 @@ export default function Footer({ setPage, setServiceTab }) {
     </footer>
   );
 }
+
 
 
 
