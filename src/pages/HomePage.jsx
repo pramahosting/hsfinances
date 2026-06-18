@@ -7,9 +7,9 @@ import "../styles/layout.css";
 const SERVICES_OVERVIEW = [
   { icon: "📊", title: "Accounting & Financial Advisory",     text: "Full-cycle bookkeeping, BAS & GST lodgement, tax planning, CFO-as-a-Service and strategic financial guidance — all delivered by CA and CPA-qualified professionals." },
   { icon: "🚀", title: "Project & Product Management",   text: "End-to-end project delivery using Agile and waterfall frameworks, paired with product strategy, roadmap development and market discovery — from concept to launch." },
-  { icon: "🎯", title: "Product Strategy & Delivery", text: "AI product strategy, competitive analysis, DVF discovery, sprint planning and ecosystem development — helping you build the right product and get it to market faster." },
   { icon: "🤖", title: "AI Solutions & Automation",    text: "Custom AI model development, intelligent process automation, RAG pipelines and LLM integration — powered by Accfino and LinkLens under the Prama AI platform." },
   { icon: "💰", title: "Payroll & Compliance",     text: "STP Phase 2 payroll, superannuation, PAYG withholding and Fair Work Act adherence — accurate, on-time and fully ATO-compliant." },
+  { icon: "🎯", title: "Product Strategy & Delivery", text: "AI product strategy, competitive analysis, DVF discovery, sprint planning and ecosystem development — helping you build the right product and get it to market faster." },
   { icon: "🕵️", title: "AI Agents & Consulting",   text: "Autonomous AI agent design, multi-agent workflow orchestration, AI readiness assessments and staff AI upskilling — strategy through to production delivery." },
 ];
 
