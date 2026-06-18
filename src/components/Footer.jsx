@@ -4,28 +4,33 @@ import "../styles/nav-footer.css";
 const PILLARS = [
   {
     label: "💼 Financial Services",
-    page: "services",
+    tab: "financial",
     items: ["BAS & GST Compliance", "Bookkeeping & Accounting", "Payroll & Superannuation", "Tax Advisory & Planning", "CFO-as-a-Service", "Financial Advisory"],
   },
   {
     label: "📋 Project & Product",
-    page: "services",
+    tab: "ppm",
     items: ["Project Delivery", "Project Planning & Control", "QA & Testing", "Market Analysis & Discovery", "Product Strategy", "Product Delivery"],
   },
   {
     label: "🤖 AI & Automation",
-    page: "services",
+    tab: "ai",
     items: ["AI Solutions & Strategy", "AI Agents Development", "Process Automation", "RAG Development", "LLM Integration & Engineering", "AI Consulting & Training"],
   },
 ];
 
-export default function Footer({ setPage }) {
+export default function Footer({ setPage, setServiceTab }) {
+  const goToService = (tab) => {
+    setServiceTab(tab);
+    setPage("services");
+  };
+
   return (
     <footer className="footer">
       <div className="footer-inner">
         <div className="footer-grid">
 
-          {/* BRAND */}
+          {/* COL 1 — BRAND */}
           <div className="footer-brand">
             <div className="footer-brand-logo">
               <img src="/data/hsflogo.png" alt="Headstart Finances Logo" />
@@ -38,26 +43,20 @@ export default function Footer({ setPage }) {
               <div><a href={`mailto:${COMPANY.email}`} style={{ color:"rgba(255,255,255,.45)" }}>{COMPANY.email}</a></div>
               <div><a href="tel:0435064886" style={{ color:"rgba(255,255,255,.45)" }}>0435 064 886</a></div>
             </div>
-            <button
-              onClick={() => setPage("contact")}
-              style={{ marginTop:20, background:"var(--gold)", color:"#fff", border:"none", padding:"10px 22px", borderRadius:8, fontWeight:700, fontSize:".82rem", cursor:"pointer", letterSpacing:".05em" }}
-            >
-              Book Free Consultation →
-            </button>
           </div>
 
-          {/* THREE SERVICE PILLARS */}
+          {/* COLS 2-4 — THREE SERVICE PILLARS */}
           {PILLARS.map((pillar) => (
             <div className="footer-col" key={pillar.label}>
               <h4>{pillar.label}</h4>
               <ul>
                 {pillar.items.map((item) => (
                   <li key={item}>
-                    <span onClick={() => setPage(pillar.page)}>{item}</span>
+                    <span onClick={() => goToService(pillar.tab)}>{item}</span>
                   </li>
                 ))}
-                <li style={{ marginTop: 6 }}>
-                  <span onClick={() => setPage(pillar.page)} style={{ color:"var(--gold)", fontSize:".78rem", fontWeight:600 }}>
+                <li style={{ marginTop: 8 }}>
+                  <span onClick={() => goToService(pillar.tab)} style={{ color:"var(--gold)", fontSize:".78rem", fontWeight:600 }}>
                     View all →
                   </span>
                 </li>
@@ -65,15 +64,21 @@ export default function Footer({ setPage }) {
             </div>
           ))}
 
-          {/* PRODUCTS + QUICK LINKS */}
+          {/* COL 5 — PRODUCTS + QUICK LINKS */}
           <div className="footer-col">
             <h4>📦 Products</h4>
             <ul>
               <li><a href="https://www.accfino.com" target="_blank" rel="noopener noreferrer">Accfino</a></li>
               <li><a href="https://linklens.prama-ai.com" target="_blank" rel="noopener noreferrer">LinkLens</a></li>
-              <li><span onClick={() => setPage("products")}>HSPayroll <span style={{ fontSize:".72rem", color:"var(--gold)" }}>Soon</span></span></li>
-              <li style={{ marginTop: 6 }}>
-                <span onClick={() => setPage("products")} style={{ color:"var(--gold)", fontSize:".78rem", fontWeight:600 }}>View all →</span>
+              <li>
+                <span onClick={() => setPage("products")}>
+                  HSPayroll <span style={{ fontSize:".72rem", color:"var(--gold)" }}>Soon</span>
+                </span>
+              </li>
+              <li style={{ marginTop: 8 }}>
+                <span onClick={() => setPage("products")} style={{ color:"var(--gold)", fontSize:".78rem", fontWeight:600 }}>
+                  View all →
+                </span>
               </li>
             </ul>
 
@@ -101,5 +106,6 @@ export default function Footer({ setPage }) {
     </footer>
   );
 }
+
 
 
