@@ -18,6 +18,7 @@ function getPageFromHash() {
 
 export default function App() {
   const [page, setPage] = useState(getPageFromHash);
+  const [serviceTab, setServiceTab] = useState("financial");
 
   // When setPage is called, push a new history entry
   const navigate = (newPage) => {
@@ -42,7 +43,7 @@ export default function App() {
       case "home":     return <HomePage     setPage={navigate} />;
       case "about":    return <AboutPage    />;
       case "products": return <ProductsPage />;
-      case "services": return <ServicesPage setPage={navigate} />;
+      case "services": return <ServicesPage setPage={navigate} tab={serviceTab} setTab={setServiceTab} />;
       case "contact":  return <ContactPage  />;
       default:         return <HomePage     setPage={navigate} />;
     }
@@ -54,8 +55,9 @@ export default function App() {
       <main style={{ paddingTop: 100 }}>
         {renderPage()}
       </main>
-      <Footer setPage={navigate} />
+      <Footer setPage={navigate} setServiceTab={setServiceTab} />
     </>
   );
 }
+
 
