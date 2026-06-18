@@ -5,12 +5,12 @@ import "../styles/components.css";
 import "../styles/layout.css";
 
 const SERVICES_OVERVIEW = [
-  { icon: "📊", title: "Financial Advisory",     text: "Strategic financial guidance tailored to your Australian business — from startup to scale-up." },
-  { icon: "🧾", title: "BAS & GST Compliance",   text: "Accurate, on-time BAS lodgement, GST reconciliation and ATO reporting. Never miss a deadline." },
-  { icon: "💼", title: "Accounting & Bookkeeping", text: "Full-cycle bookkeeping, P&L statements, balance sheets, and month-end close handled by experts." },
-  { icon: "🤖", title: "AI-Powered Software",    text: "Accfino and LinkLens bring automation, ML forecasting, and intelligent workflows to your finance team." },
-  { icon: "💰", title: "Payroll Management",     text: "STP Phase 2 compliant payroll, superannuation, PAYG and Fair Work Act adherence." },
-  { icon: "💻", title: "Technology Solutions",   text: "Bespoke software development, cloud migrations, and managed IT support through our technology team." },
+  { icon: "📊", title: "Accounting & Financial Advisory",     text: "Full-cycle bookkeeping, BAS & GST lodgement, tax planning, CFO-as-a-Service and strategic financial guidance — all delivered by CA and CPA-qualified professionals." },
+  { icon: "🚀", title: "Project & Product Management",   text: "End-to-end project delivery using Agile and waterfall frameworks, paired with product strategy, roadmap development and market discovery — from concept to launch." },
+  { icon: "🎯", title: "Product Strategy & Delivery", text: "Full-cycle bookkeeping, P&L statements, balance sheets, and month-end close handled by experts." },
+  { icon: "🤖", title: "AI Solutions & Automation",    text: "Custom AI model development, intelligent process automation, RAG pipelines and LLM integration — powered by Accfino and LinkLens under the Prama AI platform." },
+  { icon: "💰", title: "Payroll & Compliance",     text: "STP Phase 2 payroll, superannuation, PAYG withholding and Fair Work Act adherence — accurate, on-time and fully ATO-compliant." },
+  { icon: "🕵️", title: "AI Agents & Consulting",   text: "Autonomous AI agent design, multi-agent workflow orchestration, AI readiness assessments and staff AI upskilling — strategy through to production delivery." },
 ];
 
 const TESTIMONIALS = [
