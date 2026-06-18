@@ -44,6 +44,9 @@ export default function Footer({ setPage, setServiceTab }) {
               <div><a href="tel:0435064886" style={{ color:"rgba(255,255,255,.45)" }}>0435 064 886</a></div>
             </div>
             {/* Quick Links inline below brand info */}
+            <div style={{ marginTop:14 }}>
+              <div style={{ fontSize:".68rem", fontWeight:700, color:"#fff", letterSpacing:".12em", textTransform:"uppercase", marginBottom:6 }}>Quick Links</div>
+            </div>
             <div className="footer-quick-links">
               {[["Home","home"],["About","about"],["Services","services"],["Products","products"],["Contact","contact"]].map(([label, pg], i) => (
                 <span key={label}>
@@ -98,6 +101,7 @@ export default function Footer({ setPage, setServiceTab }) {
     </footer>
   );
 }
+
 
 
 
