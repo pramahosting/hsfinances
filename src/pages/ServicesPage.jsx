@@ -88,7 +88,7 @@ export default function ServicesPage({ setPage }) {
                   </p>
                   <div style={{ display:"flex", gap:16, flexWrap:"wrap", marginTop:28 }}>
                     <button className="btn-primary" onClick={() => setPage("contact")}>Get a Quote →</button>
-                    <a href="tel:0435064886" style={{ display:"inline-flex", alignItems:"center", gap:8, background:"rgba(212,160,33,.12)", color:"var(--charcoal)", padding:"14px 24px", borderRadius:8, fontWeight:600, fontSize:".92rem" }}></a>
+                    <a href="mailto:info@hsfinances.com.au" style={{ display:"inline-flex", alignItems:"center", gap:8, background:"rgba(212,160,33,.12)", color:"var(--charcoal)", padding:"14px 24px", borderRadius:8, fontWeight:600, fontSize:".92rem" }}>✉️ Email Us</a>
                   </div>
                 </div>
                 <div style={{ borderRadius:16, overflow:"hidden", boxShadow:"var(--shadow-lg)" }}>
