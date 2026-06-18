@@ -6,16 +6,38 @@ import "../styles/components.css";
 import "../styles/layout.css";
 
 const SERVICE_OPTIONS = [
+  // ── Financial Services ──
+  "── Financial Services ──",
   "BAS & GST Compliance",
   "Bookkeeping & Accounting",
   "Payroll & Superannuation",
   "Tax Advisory & Planning",
   "CFO-as-a-Service",
+  "Financial Advisory",
+  // ── Project & Product Management ──
+  "── Project & Product Management ──",
+  "Project Delivery",
+  "Project Planning & Control",
+  "Quality Assurance & Testing",
+  "Leadership & Team Management",
+  "Market Analysis & Discovery",
+  "Product Strategy",
+  "Product Delivery",
+  "Ecosystem Development",
+  // ── AI & Automation Solutions ──
+  "── AI & Automation Solutions ──",
+  "AI Solutions & Strategy",
+  "AI Agents Development",
+  "Process Automation using AI",
+  "RAG Development",
+  "LLM Integration & Engineering",
+  "AI Consulting & Training",
+  // ── Products ──
+  "── Our Products ──",
   "Accfino Platform",
-  "LinkLens / AI Solutions",
+  "LinkLens / Prama AI",
   "HSPayroll (Waitlist)",
-  "Bespoke Software Development",
-  "Cloud Infrastructure",
+  // ── Other ──
   "Other",
 ];
 
@@ -100,7 +122,10 @@ export default function ContactPage() {
                     <label className="form-label">Service of Interest</label>
                     <select className="form-select" value={form.service} onChange={update("service")}>
                       <option value="">Select a service...</option>
-                      {SERVICE_OPTIONS.map((o) => <option key={o}>{o}</option>)}
+                      {SERVICE_OPTIONS.map((o) => o.startsWith("──")
+                        ? <option key={o} disabled style={{ color: "#999", fontWeight: 600 }}>{o}</option>
+                        : <option key={o}>{o}</option>
+                      )}
                     </select>
                   </div>
                   <div className="form-group">
@@ -160,3 +185,4 @@ export default function ContactPage() {
     </>
   );
 }
+
