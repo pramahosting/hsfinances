@@ -18,13 +18,11 @@ const PPM_SERVICES = [
   // ── Project Management ──
   { icon: "🚀", title: "Project Delivery",           list: ["End-to-end project management","Agile and waterfall delivery frameworks","Software development project management","Software implementation projects","Release management"] },
   { icon: "📋", title: "Project Planning & Control", list: ["Budget tracking and reporting","Schedule management","Resource planning","Earned value analysis"] },
-  { icon: "✅", title: "Quality Assurance & Testing", list: ["Test planning and execution","Project process improvement","Project management process redesign"] },
   { icon: "👥", title: "Leadership & Team Management",list: ["Cross-functional team leadership","Stakeholder & communication management","Executive communications and status reporting","Vendor management","Client management","Conflict resolution"] },
   // ── Product Management ──
   { icon: "🔍", title: "Market Analysis & Discovery", list: ["Competitive analysis","Market sizing & research","Analysis of market dynamics and new entrants","User research and customer interviews","DVF discovery framework","Customer journey mapping","Persona development","Pretotyping & opportunity mapping","Requirements gathering"] },
   { icon: "🎯", title: "Product Strategy",            list: ["AI product strategy development","Product positioning & roadmap development","Business model design","Product-market fit analysis","Investment readiness","Brand positioning","Product portfolio improvement"] },
   { icon: "⚡", title: "Product Delivery",            list: ["Agile product development methodology","Sprint planning & user story creation","Acceptance criteria definition","Scope management","Risk mitigation strategy development"] },
-  { icon: "🌐", title: "Ecosystem Development",       list: ["Development of external partnerships","Management and pilot execution of external startups","Accelerator program execution","Executive-level product endorsement"] },
 ];
 
 const PRAMA_SERVICES = [
