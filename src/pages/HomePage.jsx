@@ -5,12 +5,51 @@ import "../styles/components.css";
 import "../styles/layout.css";
 
 const SERVICES_OVERVIEW = [
-  { icon: "📊", title: "Accounting & Financial Advisory",     text: "Full-cycle bookkeeping, BAS & GST lodgement, tax planning, CFO-as-a-Service and strategic financial guidance — all delivered by CA and CPA-qualified professionals." },
-  { icon: "🚀", title: "Project & Product Management",   text: "End-to-end project delivery using Agile and waterfall frameworks, paired with product strategy, roadmap development and market discovery — from concept to launch." },
-  { icon: "🤖", title: "AI Solutions & Automation",    text: "Custom AI model development, intelligent process automation, RAG pipelines and LLM integration — powered by Accfino and LinkLens under the Prama AI platform." },
-  { icon: "💰", title: "Payroll & Compliance",     text: "STP Phase 2 payroll, superannuation, PAYG withholding and Fair Work Act adherence — accurate, on-time and fully ATO-compliant." },
-  { icon: "🎯", title: "Product Strategy & Delivery", text: "AI product strategy, competitive analysis, DVF discovery, sprint planning and ecosystem development — helping you build the right product and get it to market faster." },
-  { icon: "🕵️", title: "AI Agents & Consulting",   text: "Autonomous AI agent design, multi-agent workflow orchestration, AI readiness assessments and staff AI upskilling — strategy through to production delivery." },
+  // ── Financial Services ──
+  {
+    pillar: "finance",
+    pillarLabel: "Financial Services",
+    icon: "📊",
+    title: "Accounting & Financial Advisory",
+    text: "Full-cycle bookkeeping, BAS & GST lodgement, tax planning, CFO-as-a-Service and strategic financial guidance — all delivered by CPA-qualified professionals.",
+  },
+  {
+    pillar: "finance",
+    pillarLabel: "Financial Services",
+    icon: "💰",
+    title: "Payroll & Compliance",
+    text: "STP Phase 2 payroll, superannuation, PAYG withholding and Fair Work Act adherence — accurate, on-time and fully ATO-compliant.",
+  },
+  // ── Project & Product Management ──
+  {
+    pillar: "ppm",
+    pillarLabel: "Project & Product",
+    icon: "🚀",
+    title: "Project & Product Management",
+    text: "End-to-end project delivery using Agile and waterfall frameworks, paired with product strategy, roadmap development and market discovery — from concept to launch.",
+  },
+  {
+    pillar: "ppm",
+    pillarLabel: "Project & Product",
+    icon: "🎯",
+    title: "Product Strategy & Delivery",
+    text: "AI product strategy, competitive analysis, DVF discovery, sprint planning and ecosystem development — helping you build the right product and get it to market faster.",
+  },
+  // ── AI & Automation ──
+  {
+    pillar: "ai",
+    pillarLabel: "AI Solutions",
+    icon: "🤖",
+    title: "AI Solutions & Automation",
+    text: "Custom AI model development, intelligent process automation, RAG pipelines and LLM integration — powered by Accfino and LinkLens under the Prama AI platform.",
+  },
+  {
+    pillar: "ai",
+    pillarLabel: "AI Solutions",
+    icon: "🕵️",
+    title: "AI Agents & Consulting",
+    text: "Autonomous AI agent design, multi-agent workflow orchestration, AI readiness assessments and staff AI upskilling — strategy through to production delivery.",
+  },
 ];
 
 const TESTIMONIALS = [
@@ -79,16 +118,36 @@ export default function HomePage({ setPage }) {
         <div className="container">
           <div className="section-header reveal">
             <div className="section-eyebrow">What We Do</div>
-            <h2 className="section-title">Comprehensive Financial &amp; Technology Services</h2>
+            <h2 className="section-title">Three Pillars. One Firm.</h2>
             <div className="divider" />
             <p className="section-lead">
-              From day-to-day bookkeeping to AI-driven platforms, Headstart Finances covers every
-              financial need of the modern Australian business.
+              Headstart Finances brings together <strong>Financial Services</strong>,{" "}
+              <strong>Project &amp; Product Management</strong>, and{" "}
+              <strong>AI-Powered Solutions</strong> — everything the modern Australian business needs,
+              under one roof.
             </p>
           </div>
           <div className="grid-3">
             {SERVICES_OVERVIEW.map((s, i) => (
               <div key={s.title} className="service-card reveal" style={{ transitionDelay: `${i * 80}ms` }}>
+                <div style={{
+                  display: "inline-block",
+                  fontSize: ".68rem",
+                  fontWeight: 700,
+                  letterSpacing: ".12em",
+                  textTransform: "uppercase",
+                  padding: "3px 10px",
+                  borderRadius: 100,
+                  marginBottom: 10,
+                  background:
+                    s.pillar === "finance" ? "rgba(11,45,110,.1)" :
+                    s.pillar === "ppm"     ? "rgba(212,160,33,.15)" :
+                                             "rgba(45,58,82,.12)",
+                  color:
+                    s.pillar === "finance" ? "var(--navy)" :
+                    s.pillar === "ppm"     ? "var(--gold-dark)" :
+                                             "var(--charcoal)",
+                }}>{s.pillarLabel}</div>
                 <div className="service-icon">{s.icon}</div>
                 <div className="service-title">{s.title}</div>
                 <p className="service-text">{s.text}</p>
@@ -168,8 +227,8 @@ export default function HomePage({ setPage }) {
         </div>
       </section>
 
-      {/* ── TESTIMONIALS ── */}
-      <section className="section section-alt">
+      {/* ── TESTIMONIALS (hidden — restore by removing style={{display:"none"}}) ── */}
+      <section className="section section-alt" style={{ display:"none" }}>
         <div className="container">
           <div className="section-header center reveal">
             <div className="section-eyebrow">Client Stories</div>
@@ -212,3 +271,4 @@ export default function HomePage({ setPage }) {
     </>
   );
 }
+
