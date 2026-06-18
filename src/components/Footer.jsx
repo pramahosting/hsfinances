@@ -13,7 +13,7 @@ export default function Footer({ setPage }) {
               <img src="/data/hsflogo.png" alt="Headstart Finances Logo" />
               <h3>Headstart Finances Australia</h3>
             </div>
-            <p>Expert financial services and technology solutions for Australian businesses. Trusted, ATO-compliant, and future-ready.</p>
+            <p>Expert financial and product management services and AI-powered technology solutions for Australian businesses. Trusted, ATO-compliant, and future-ready.</p>
             <div className="footer-meta">
               <div>ABN: {COMPANY.abn}</div>
               <div>{COMPANY.address}</div>
