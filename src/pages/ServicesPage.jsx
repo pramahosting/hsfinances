@@ -18,11 +18,13 @@ const PPM_SERVICES = [
   // ── Project Management ──
   { icon: "🚀", title: "Project Delivery",           list: ["End-to-end project management","Agile and waterfall delivery frameworks","Software development project management","Software implementation projects","Release management"] },
   { icon: "📋", title: "Project Planning & Control", list: ["Budget tracking and reporting","Schedule management","Resource planning","Earned value analysis"] },
+  { icon: "✅", title: "Quality Assurance & Testing", list: ["Test planning and execution","Project process improvement","Project management process redesign"] },
   { icon: "👥", title: "Leadership & Team Management",list: ["Cross-functional team leadership","Stakeholder & communication management","Executive communications and status reporting","Vendor management","Client management","Conflict resolution"] },
   // ── Product Management ──
   { icon: "🔍", title: "Market Analysis & Discovery", list: ["Competitive analysis","Market sizing & research","Analysis of market dynamics and new entrants","User research and customer interviews","DVF discovery framework","Customer journey mapping","Persona development","Pretotyping & opportunity mapping","Requirements gathering"] },
   { icon: "🎯", title: "Product Strategy",            list: ["AI product strategy development","Product positioning & roadmap development","Business model design","Product-market fit analysis","Investment readiness","Brand positioning","Product portfolio improvement"] },
   { icon: "⚡", title: "Product Delivery",            list: ["Agile product development methodology","Sprint planning & user story creation","Acceptance criteria definition","Scope management","Risk mitigation strategy development"] },
+  { icon: "🌐", title: "Ecosystem Development",       list: ["Development of external partnerships","Management and pilot execution of external startups","Accelerator program execution","Executive-level product endorsement"] },
 ];
 
 const PRAMA_SERVICES = [
@@ -41,9 +43,11 @@ const PROCESS_STEPS = [
   ["4","Delivery","Ongoing service delivery with regular reporting, proactive advice, and responsive support."],
 ];
 
-export default function ServicesPage({ setPage }) {
+export default function ServicesPage({ setPage, tab: tabProp, setTab: setTabProp }) {
   useReveal();
-  const [tab, setTab] = useState("financial");
+  const [localTab, setLocalTab] = useState(tabProp || "financial");
+  const tab = tabProp || localTab;
+  const setTab = setTabProp || setLocalTab;
   const services = tab === "financial" ? FINANCIAL_SERVICES : tab === "ppm" ? PPM_SERVICES : PRAMA_SERVICES;
 
   return (
@@ -86,7 +90,7 @@ export default function ServicesPage({ setPage }) {
                   </p>
                   <div style={{ display:"flex", gap:16, flexWrap:"wrap", marginTop:28 }}>
                     <button className="btn-primary" onClick={() => setPage("contact")}>Get a Quote →</button>
-                    <a href="mailto:info@hsfinances.com.au" style={{ display:"inline-flex", alignItems:"center", gap:8, background:"rgba(212,160,33,.12)", color:"var(--charcoal)", padding:"14px 24px", borderRadius:8, fontWeight:600, fontSize:".92rem" }}>✉️ Email Us</a>
+                    <a href="tel:0435064886" style={{ display:"inline-flex", alignItems:"center", gap:8, background:"rgba(212,160,33,.12)", color:"var(--charcoal)", padding:"14px 24px", borderRadius:8, fontWeight:600, fontSize:".92rem" }}>📞 0435 064 886</a>
                   </div>
                 </div>
                 <div style={{ borderRadius:16, overflow:"hidden", boxShadow:"var(--shadow-lg)" }}>
