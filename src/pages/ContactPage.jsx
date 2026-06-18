@@ -74,7 +74,7 @@ export default function ContactPage() {
       <div className="page-hero">
         <div className="container">
           <div className="section-eyebrow" style={{ color:"var(--gold)" }}>Contact Us</div>
-          <h1>Let's Talk Finances</h1>
+          <h1>Let's Talk</h1>
           <p>Our Sydney team is ready to help. Book a free consultation or send us a message and we'll respond within one business day.</p>
         </div>
       </div>
