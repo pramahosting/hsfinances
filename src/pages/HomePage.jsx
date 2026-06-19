@@ -121,8 +121,7 @@ export default function HomePage({ setPage }) {
             <h2 className="section-title">Comprehensive Financial &amp; AI-Powered Solutions.</h2>
             <div className="divider" />
             <p className="section-lead">
-              Headstart Finances brings together <strong>Financial Services</strong>,
-              <strong>Project &amp; Product Management</strong>, and{" "}
+              Headstart Finances brings together <strong>Financial Services, Project &amp; Product Management</strong>, and{" "}
               <strong>AI-Powered Solutions</strong> — everything the modern Australian business needs, under one roof.
             </p>
           </div>
