@@ -31,13 +31,13 @@ export default function Footer({ setPage, setServiceTab }) {
         <div className="footer-grid">
 
           {/* COL 1 — BRAND + QUICK LINKS inline */}
-          <div className="footer-brand">
-            <div className="footer-brand-logo">
+          <div className="footer-brand" style={{ textAlign:"center" }}>
+            <div className="footer-brand-logo" style={{ justifyContent:"center" }}>
               <img src="/data/hsflogo.png" alt="Headstart Finances Logo" />
               <h3>Headstart Finances</h3>
             </div>
             <p>Expert accounting, project management and AI solutions for modern Australian businesses.</p>
-            <div className="footer-meta">
+            <div className="footer-meta" style={{ textAlign:"center" }}>
               <div>ABN: {COMPANY.abn}</div>
               <div>{COMPANY.address}</div>
               <div><a href={`mailto:${COMPANY.email}`} style={{ color:"rgba(255,255,255,.45)" }}>{COMPANY.email}</a></div>
