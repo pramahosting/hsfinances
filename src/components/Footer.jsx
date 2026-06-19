@@ -63,18 +63,7 @@ export default function Footer({ setPage, setServiceTab }) {
                 <li key={item}><span onClick={() => goToService(PILLARS[1].tab)}>{item}</span></li>
               ))}
             </ul>
-            {/* Quick Links below Project & Product */}
-            <div style={{ marginTop: 20 }}>
-              <h4>Quick Links</h4>
-              <div className="footer-quick-links">
-                {[["Home","home"],["About","about"],["Services","services"],["Products","products"],["Contact","contact"]].map(([label, pg], i) => (
-                  <span key={label}>
-                    <span onClick={() => setPage(pg)}>{label}</span>
-                    {i < 4 && <span style={{ color:"rgba(255,255,255,.2)", margin:"0 6px" }}>|</span>}
-                  </span>
-                ))}
-              </div>
-            </div>
+
           </div>
 
           {/* COL 4 — AI & AUTOMATION */}
@@ -99,6 +88,17 @@ export default function Footer({ setPage, setServiceTab }) {
                 </span>
               </li>
             </ul>
+            <div style={{ marginTop: 20 }}>
+              <h4>Quick Links</h4>
+              <div className="footer-quick-links">
+                {[["Home","home"],["About","about"],["Services","services"],["Products","products"],["Contact","contact"]].map(([label, pg], i) => (
+                  <span key={label}>
+                    <span onClick={() => setPage(pg)}>{label}</span>
+                    {i < 4 && <span style={{ color:"rgba(255,255,255,.2)", margin:"0 6px" }}>|</span>}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
 
         </div>
