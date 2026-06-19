@@ -75,7 +75,7 @@ export default function HomePage({ setPage }) {
         <div className="hero-overlay" />
         <div className="hero-content">
           <div className="hero-eyebrow">Sydney CBD · Est. {2022}</div>
-          <h1>Your <em>Financial and Tech Edge</em> in the Australian Market</h1>
+          <h1>Your <em>Financial &amp; Tech Edge</em> in the Australian Market</h1>
           <p className="hero-sub">
             Headstart Finances Australia delivers expert accounting, financial advisory, product strategy, 
             and AI-powered technology solutions — purpose-built for Australian businesses.
