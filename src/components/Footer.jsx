@@ -30,46 +30,62 @@ export default function Footer({ setPage, setServiceTab }) {
       <div className="footer-inner">
         <div className="footer-grid">
 
-          {/* COL 1 — BRAND + QUICK LINKS inline */}
-          <div className="footer-brand" style={{ textAlign:"center" }}>
-            <div className="footer-brand-logo" style={{ justifyContent:"center" }}>
+          {/* COL 1 — BRAND */}
+          <div className="footer-brand">
+            <div className="footer-brand-logo">
               <img src="/data/hsflogo.png" alt="Headstart Finances Logo" />
               <h3>Headstart Finances</h3>
             </div>
             <p>Expert accounting, project management and AI solutions for modern Australian businesses.</p>
-            <div className="footer-meta" style={{ textAlign:"center" }}>
+            <div className="footer-meta">
               <div>ABN: {COMPANY.abn}</div>
               <div>{COMPANY.address}</div>
               <div><a href={`mailto:${COMPANY.email}`} style={{ color:"rgba(255,255,255,.45)" }}>{COMPANY.email}</a></div>
               <div><a href="tel:0435064886" style={{ color:"rgba(255,255,255,.45)" }}>0435 064 886</a></div>
             </div>
-            {/* Quick Links inline below brand info */}
-            <div style={{ marginTop:14, textAlign:"center" }}>
-              <div style={{ fontSize:".68rem", fontWeight:700, color:"#fff", letterSpacing:".12em", textTransform:"uppercase", marginBottom:6 }}>Quick Links</div>
-            </div>
-            <div className="footer-quick-links" style={{ justifyContent:"center" }}>
-              {[["Home","home"],["About","about"],["Services","services"],["Products","products"],["Contact","contact"]].map(([label, pg], i) => (
-                <span key={label}>
-                  <span onClick={() => setPage(pg)}>{label}</span>
-                  {i < 4 && <span style={{ color:"rgba(255,255,255,.2)", margin:"0 6px" }}>|</span>}
-                </span>
+          </div>
+
+          {/* COL 2 — FINANCIAL SERVICES */}
+          <div className="footer-col">
+            <h4>{PILLARS[0].label}</h4>
+            <ul>
+              {PILLARS[0].items.map((item) => (
+                <li key={item}><span onClick={() => goToService(PILLARS[0].tab)}>{item}</span></li>
               ))}
+            </ul>
+          </div>
+
+          {/* COL 3 — PROJECT & PRODUCT + QUICK LINKS below */}
+          <div className="footer-col">
+            <h4>{PILLARS[1].label}</h4>
+            <ul>
+              {PILLARS[1].items.map((item) => (
+                <li key={item}><span onClick={() => goToService(PILLARS[1].tab)}>{item}</span></li>
+              ))}
+            </ul>
+            {/* Quick Links below Project & Product */}
+            <div style={{ marginTop: 20 }}>
+              <h4>Quick Links</h4>
+              <div className="footer-quick-links">
+                {[["Home","home"],["About","about"],["Services","services"],["Products","products"],["Contact","contact"]].map(([label, pg], i) => (
+                  <span key={label}>
+                    <span onClick={() => setPage(pg)}>{label}</span>
+                    {i < 4 && <span style={{ color:"rgba(255,255,255,.2)", margin:"0 6px" }}>|</span>}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* COLS 2-4 — THREE SERVICE PILLARS */}
-          {PILLARS.map((pillar) => (
-            <div className="footer-col" key={pillar.label}>
-              <h4>{pillar.label}</h4>
-              <ul>
-                {pillar.items.map((item) => (
-                  <li key={item}>
-                    <span onClick={() => goToService(pillar.tab)}>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {/* COL 4 — AI & AUTOMATION */}
+          <div className="footer-col">
+            <h4>{PILLARS[2].label}</h4>
+            <ul>
+              {PILLARS[2].items.map((item) => (
+                <li key={item}><span onClick={() => goToService(PILLARS[2].tab)}>{item}</span></li>
+              ))}
+            </ul>
+          </div>
 
           {/* COL 5 — PRODUCTS */}
           <div className="footer-col">
