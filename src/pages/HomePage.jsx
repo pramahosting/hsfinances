@@ -118,7 +118,7 @@ export default function HomePage({ setPage }) {
         <div className="container">
           <div className="section-header reveal">
             <div className="section-eyebrow">What We Do</div>
-            <h2 className="section-title">Three Pillars. One Firm.</h2>
+            <h2 className="section-title">Comprehensive Financial, Product &amp; AI-Powered Technology Services.</h2>
             <div className="divider" />
             <p className="section-lead">
               Headstart Finances brings together <strong>Financial Services</strong>,{" "}
