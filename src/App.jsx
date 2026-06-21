@@ -1,63 +1,48 @@
-import { useState, useEffect } from "react";
-import Navbar      from "./components/Navbar";
-import Footer      from "./components/Footer";
-import HomePage    from "./pages/HomePage";
-import AboutPage   from "./pages/AboutPage";
-import ProductsPage from "./pages/ProductsPage";
-import ServicesPage from "./pages/ServicesPage";
-import ContactPage  from "./pages/ContactPage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar       from "./components/Navbar";
+import Footer       from "./components/Footer";
+import ScrollToTop  from "./components/ScrollToTop";
+import HomePage      from "./pages/HomePage";
+import AboutPage     from "./pages/AboutPage";
+import ServicesOverviewPage   from "./pages/ServicesOverviewPage";
+import FinancialServicesPage  from "./pages/FinancialServicesPage";
+import PPMServicesPage        from "./pages/PPMServicesPage";
+import AIServicesPage         from "./pages/AIServicesPage";
+import ProductsOverviewPage   from "./pages/ProductsOverviewPage";
+import AccfinoPage   from "./pages/AccfinoPage";
+import LinkLensPage  from "./pages/LinkLensPage";
+import HSPayrollPage from "./pages/HSPayrollPage";
+import ContactPage   from "./pages/ContactPage";
+import NotFoundPage  from "./pages/NotFoundPage";
 import "./styles/variables.css";
 import "./styles/layout.css";
 
-const VALID_PAGES = ["home", "about", "products", "services", "contact"];
-
-function getPageFromHash() {
-  const hash = window.location.hash.replace("#", "");
-  return VALID_PAGES.includes(hash) ? hash : "home";
-}
-
 export default function App() {
-  const [page, setPage] = useState(getPageFromHash);
-  const [serviceTab, setServiceTab] = useState("financial");
-
-  // When setPage is called, push a new history entry
-  const navigate = (newPage) => {
-    window.location.hash = newPage === "home" ? "" : newPage;
-    setPage(newPage);
-  };
-
-  // Listen to browser back/forward
-  useEffect(() => {
-    const onPopState = () => setPage(getPageFromHash());
-    window.addEventListener("popstate", onPopState);
-    return () => window.removeEventListener("popstate", onPopState);
-  }, []);
-
-  // Scroll to top on page change
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [page]);
-
-  const renderPage = () => {
-    switch (page) {
-      case "home":     return <HomePage     setPage={navigate} />;
-      case "about":    return <AboutPage    />;
-      case "products": return <ProductsPage />;
-      case "services": return <ServicesPage setPage={navigate} tab={serviceTab} setTab={setServiceTab} />;
-      case "contact":  return <ContactPage  />;
-      default:         return <HomePage     setPage={navigate} />;
-    }
-  };
-
   return (
-    <>
-      <Navbar page={page} setPage={navigate} />
+    <BrowserRouter>
+      <ScrollToTop />
+      <Navbar />
       <main style={{ paddingTop: 100 }}>
-        {renderPage()}
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+
+          <Route path="/services" element={<ServicesOverviewPage />} />
+          <Route path="/services/financial-services" element={<FinancialServicesPage />} />
+          <Route path="/services/project-product-management" element={<PPMServicesPage />} />
+          <Route path="/services/ai-automation" element={<AIServicesPage />} />
+
+          <Route path="/products" element={<ProductsOverviewPage />} />
+          <Route path="/products/accfino" element={<AccfinoPage />} />
+          <Route path="/products/linklens" element={<LinkLensPage />} />
+          <Route path="/products/hspayroll" element={<HSPayrollPage />} />
+
+          <Route path="/contact" element={<ContactPage />} />
+
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
       </main>
-      <Footer setPage={navigate} setServiceTab={setServiceTab} />
-    </>
+      <Footer />
+    </BrowserRouter>
   );
 }
-
-

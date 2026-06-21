@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
 import { IMG } from "../utils/constants";
 import { useReveal } from "../hooks/useReveal";
+import { usePageMeta } from "../hooks/usePageMeta";
 import "../styles/hero.css";
 import "../styles/components.css";
 import "../styles/layout.css";
@@ -59,13 +61,18 @@ const TESTIMONIALS = [
 ];
 
 const PRODUCTS_TEASER = [
-  { name: "Accfino",   tag: "Live Product",       desc: "AI-powered accounting with ML cash flow forecasting, crypto CGT, open banking, and BAS lodgement. Built and hosted in Australia.", link: "https://www.accfino.com",           color: "#0B2D6E" },
-  { name: "LinkLens",  tag: "AI Agent Platform",  desc: "Intelligent AI agent platform under the Prama AI brand. Automate research, web intelligence, and knowledge workflows.",          link: "https://linklens.prama-ai.com",     color: "#2d3a52" },
-  { name: "HSPayroll", tag: "Coming Soon",         desc: "A next-generation Australian payroll system with STP Phase 2, superannuation automation, and Fair Work compliance built in.",  link: null,                                color: "#7a4e00" },
+  { name: "Accfino", tag: "Live Product", desc: "AI-powered accounting with ML cash flow forecasting, crypto CGT, open banking, and BAS lodgement. Built and hosted in Australia.", link: "/products/accfino", color: "#0B2D6E" },
+  { name: "LinkLens", tag: "AI Agent Platform", desc: "Intelligent AI agent platform under the Prama AI brand. Automate research, web intelligence, and knowledge workflows.", link: "/products/linklens", color: "#2d3a52" },
+  { name: "HSPayroll", tag: "Coming Soon", desc: "A next-generation Australian payroll system with STP Phase 2, superannuation automation, and Fair Work compliance built in.", link: "/products/hspayroll", color: "#7a4e00" },
 ];
 
-export default function HomePage({ setPage }) {
+export default function HomePage() {
   useReveal();
+  usePageMeta(
+    "Headstart Finances Australia | Accounting, BAS/GST, Payroll & AI Solutions Sydney",
+    "Sydney-based accounting, BAS/GST compliance, payroll, project & product management, and AI-powered solutions for Australian businesses. ABN 88 656 265 860.",
+    "/"
+  );
 
   return (
     <>
@@ -81,11 +88,11 @@ export default function HomePage({ setPage }) {
             and AI-powered tech solutions — purpose-built for Australian businesses.
           </p>
           <div className="hero-btns">
-            <button className="btn-primary" onClick={() => setPage("services")}>Explore Services →</button>
-            <button className="btn-outline" onClick={() => setPage("contact")}>Talk to an Expert</button>
+            <Link to="/services" className="btn-primary">Explore Services →</Link>
+            <Link to="/contact" className="btn-outline">Talk to an Expert</Link>
           </div>
           <div className="hero-stats">
-            {[["$20M+","Finance Managed"],["7+","Years Experience"],["99%","Compliance Rate"]].map(([n, l]) => (
+            {[["$20M+", "Finance Managed"], ["7+", "Years Experience"], ["99%", "Compliance Rate"]].map(([n, l]) => (
               <div key={l} className="hero-stat">
                 <div className="hero-stat-num">{n}</div>
                 <div className="hero-stat-label">{l}</div>
@@ -100,10 +107,10 @@ export default function HomePage({ setPage }) {
       <div className="features-bar">
         <div className="features-bar-inner">
           {[
-            ["ATO Compliant","Fully compliant with all ATO regulations and reporting standards"],
-            ["CA & CPA Qualified","Supported by a team of CA ANZ and CPA Australia certified professionals"],
-            ["Advanced Data Security","Your data is fully protected with industry-leading security technologies"],
-            ["24-Hour Turnaround","Fast, reliable service with guaranteed response times"]
+            ["ATO Compliant", "Fully compliant with all ATO regulations and reporting standards"],
+            ["CA & CPA Qualified", "Supported by a team of CA ANZ and CPA Australia certified professionals"],
+            ["Advanced Data Security", "Your data is fully protected with industry-leading security technologies"],
+            ["24-Hour Turnaround", "Fast, reliable service with guaranteed response times"]
           ].map(([t, d]) => (
             <div key={t} className="feat-item">
               <div className="feat-num">✓</div>
@@ -139,12 +146,12 @@ export default function HomePage({ setPage }) {
                   marginBottom: 10,
                   background:
                     s.pillar === "finance" ? "rgba(11,45,110,.1)" :
-                    s.pillar === "ppm"     ? "rgba(212,160,33,.15)" :
-                                             "rgba(45,58,82,.12)",
+                      s.pillar === "ppm" ? "rgba(212,160,33,.15)" :
+                        "rgba(45,58,82,.12)",
                   color:
                     s.pillar === "finance" ? "var(--navy)" :
-                    s.pillar === "ppm"     ? "var(--gold-dark)" :
-                                             "var(--charcoal)",
+                      s.pillar === "ppm" ? "var(--gold-dark)" :
+                        "var(--charcoal)",
                 }}>{s.pillarLabel}</div>
                 <div className="service-icon">{s.icon}</div>
                 <div className="service-title">{s.title}</div>
@@ -153,7 +160,7 @@ export default function HomePage({ setPage }) {
             ))}
           </div>
           <div style={{ textAlign: "center", marginTop: 48 }}>
-            <button className="btn-primary" onClick={() => setPage("services")}>View All Services →</button>
+            <Link to="/services" className="btn-primary">View All Services →</Link>
           </div>
         </div>
       </section>
@@ -176,15 +183,15 @@ export default function HomePage({ setPage }) {
               </p>
               <ul className="about-list">
                 {[
-                  ["🏛️","Registered Australian company — ABN 88 656 265 860"],
-                  ["🎓","CA and CPA Australia qualified professionals"],
-                  ["🚀","AI-powered products. Projects expertly delivered"],
-                  ["💡","Innovators in FinTech through Accfino and LinkLens"],
+                  ["🏛️", "Registered Australian company — ABN 88 656 265 860"],
+                  ["🎓", "CA and CPA Australia qualified professionals"],
+                  ["🚀", "AI-powered products. Projects expertly delivered"],
+                  ["💡", "Innovators in FinTech through Accfino and LinkLens"],
                 ].map(([icon, text]) => (
                   <li key={text}><span className="icon">{icon}</span>{text}</li>
                 ))}
               </ul>
-              <button className="btn-primary" style={{ marginTop: 28 }} onClick={() => setPage("about")}>Our Story →</button>
+              <Link to="/about" className="btn-primary" style={{ marginTop: 28, display: "inline-block" }}>Our Story →</Link>
             </div>
           </div>
         </div>
@@ -204,29 +211,26 @@ export default function HomePage({ setPage }) {
           </div>
           <div className="grid-3">
             {PRODUCTS_TEASER.map((p) => (
-              <div key={p.name} className="card reveal">
+              <Link key={p.name} to={p.link} className="card reveal" style={{ textDecoration: "none", color: "inherit", display: "block" }}>
                 <div style={{ background: p.color, padding: "32px 28px" }}>
-                  <div style={{ display:"inline-block", background:"rgba(255,255,255,.15)", color:"#fff", fontSize:".72rem", fontWeight:600, padding:"4px 12px", borderRadius:100, letterSpacing:".15em", marginBottom:12 }}>{p.tag}</div>
-                  <h3 style={{ color:"#fff", fontSize:"1.8rem", fontFamily:"'Playfair Display',serif" }}>{p.name}</h3>
+                  <div style={{ display: "inline-block", background: "rgba(255,255,255,.15)", color: "#fff", fontSize: ".72rem", fontWeight: 600, padding: "4px 12px", borderRadius: 100, letterSpacing: ".15em", marginBottom: 12 }}>{p.tag}</div>
+                  <h3 style={{ color: "#fff", fontSize: "1.8rem", fontFamily: "'Playfair Display',serif" }}>{p.name}</h3>
                 </div>
                 <div className="card-body">
                   <p className="card-text">{p.desc}</p>
-                  {p.link
-                    ? <a className="card-link" href={p.link} target="_blank" rel="noopener noreferrer">Visit {p.name} →</a>
-                    : <span className="coming-badge">Under Development</span>
-                  }
+                  <span className="card-link">Learn more about {p.name} →</span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
-          <div style={{ textAlign:"center", marginTop:40 }}>
-            <button className="btn-primary" onClick={() => setPage("products")}>Explore All Products →</button>
+          <div style={{ textAlign: "center", marginTop: 40 }}>
+            <Link to="/products" className="btn-primary">Explore All Products →</Link>
           </div>
         </div>
       </section>
 
       {/* ── TESTIMONIALS (hidden — restore by removing style={{display:"none"}}) ── */}
-      <section className="section section-alt" style={{ display:"none" }}>
+      <section className="section section-alt" style={{ display: "none" }}>
         <div className="container">
           <div className="section-header center reveal">
             <div className="section-eyebrow">Client Stories</div>
@@ -237,13 +241,13 @@ export default function HomePage({ setPage }) {
             {TESTIMONIALS.map((t, i) => (
               <div key={i} className="card reveal" style={{ transitionDelay: `${i * 80}ms` }}>
                 <div className="card-body">
-                  <div style={{ fontSize:"2rem", color:"var(--gold)", marginBottom:16, lineHeight:1 }}>"</div>
-                  <p style={{ fontStyle:"italic", color:"var(--slate)", lineHeight:1.75, fontSize:".92rem", marginBottom:24 }}>{t.q}</p>
-                  <div style={{ display:"flex", alignItems:"center", gap:12 }}>
-                    <div style={{ width:40, height:40, borderRadius:"50%", background:"var(--sky)", display:"flex", alignItems:"center", justifyContent:"center", fontWeight:700, color:"var(--navy)", flexShrink:0 }}>{t.name[0]}</div>
+                  <div style={{ fontSize: "2rem", color: "var(--gold)", marginBottom: 16, lineHeight: 1 }}>"</div>
+                  <p style={{ fontStyle: "italic", color: "var(--slate)", lineHeight: 1.75, fontSize: ".92rem", marginBottom: 24 }}>{t.q}</p>
+                  <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                    <div style={{ width: 40, height: 40, borderRadius: "50%", background: "var(--sky)", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, color: "var(--navy)", flexShrink: 0 }}>{t.name[0]}</div>
                     <div>
-                      <div style={{ fontWeight:700, fontSize:".88rem", color:"var(--navy)" }}>{t.name}</div>
-                      <div style={{ fontSize:".78rem", color:"var(--gold)", fontWeight:600 }}>{t.role}</div>
+                      <div style={{ fontWeight: 700, fontSize: ".88rem", color: "var(--navy)" }}>{t.name}</div>
+                      <div style={{ fontSize: ".78rem", color: "var(--gold)", fontWeight: 600 }}>{t.role}</div>
                     </div>
                   </div>
                 </div>
@@ -260,8 +264,8 @@ export default function HomePage({ setPage }) {
             <h2>Ready to Headstart Your Finances?</h2>
             <p>Book a free 30-minute consultation with one of our Sydney-based financial experts today.</p>
             <div className="cta-btns">
-              <button className="btn-primary" onClick={() => setPage("contact")}>Book Free Consultation</button>
-              <button className="btn-outline" onClick={() => setPage("services")}>View Our Services</button>
+              <Link to="/contact" className="btn-primary">Book Free Consultation</Link>
+              <Link to="/services" className="btn-outline">View Our Services</Link>
             </div>
           </div>
         </div>
@@ -269,4 +273,3 @@ export default function HomePage({ setPage }) {
     </>
   );
 }
-

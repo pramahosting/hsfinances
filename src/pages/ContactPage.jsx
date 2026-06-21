@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { COMPANY } from "../utils/constants";
 import { useReveal } from "../hooks/useReveal";
+import { usePageMeta } from "../hooks/usePageMeta";
 import "../styles/hero.css";
 import "../styles/components.css";
 import "../styles/layout.css";
@@ -49,6 +50,11 @@ const CONTACT_ITEMS = [
 
 export default function ContactPage() {
   useReveal();
+  usePageMeta(
+    "Contact Us | Headstart Finances Australia — Sydney CBD",
+    "Get in touch with Headstart Finances Australia. Book a free 30-minute consultation with our Sydney-based financial and technology experts.",
+    "/contact"
+  );
   const [form, setForm]     = useState({ name:"", company:"", email:"", phone:"", service:"", message:"" });
   const [sent, setSent]     = useState(false);
   const [sending, setSending] = useState(false);

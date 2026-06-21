@@ -1,30 +1,34 @@
+import { Link } from "react-router-dom";
 import { COMPANY, LEGAL } from "../utils/constants";
 import "../styles/nav-footer.css";
 
 const PILLARS = [
   {
     label: "💼 Financial Services",
-    tab: "financial",
+    path: "/services/financial-services",
     items: ["BAS & GST Compliance", "Bookkeeping & Accounting", "Payroll & Superannuation", "Tax Advisory & Planning", "CFO-as-a-Service", "Financial Advisory"],
   },
   {
     label: "📋 Project & Product",
-    tab: "ppm",
+    path: "/services/project-product-management",
     items: ["Project Delivery", "Project Planning & Control", "Market Analysis & Discovery", "Product Strategy", "Product Delivery"],
   },
   {
     label: "🤖 AI & Automation",
-    tab: "ai",
+    path: "/services/ai-automation",
     items: ["AI Solutions & Strategy", "AI Agents Development", "Process Automation", "RAG Development", "LLM Integration & Engineering", "AI Consulting & Training"],
   },
 ];
 
-export default function Footer({ setPage, setServiceTab }) {
-  const goToService = (tab) => {
-    setServiceTab(tab);
-    setPage("services");
-  };
+const QUICK_LINKS = [
+  ["Home", "/"],
+  ["About", "/about"],
+  ["Services", "/services"],
+  ["Products", "/products"],
+  ["Contact", "/contact"],
+];
 
+export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-inner">
@@ -40,8 +44,8 @@ export default function Footer({ setPage, setServiceTab }) {
             <div className="footer-meta">
               <div>ABN: {COMPANY.abn}</div>
               <div>{COMPANY.address}</div>
-              <div><a href={`mailto:${COMPANY.email}`} style={{ color:"rgba(255,255,255,.45)" }}>{COMPANY.email}</a></div>
-              <div><a href="tel:0435064886" style={{ color:"rgba(255,255,255,.45)" }}>0435 064 886</a></div>
+              <div><a href={`mailto:${COMPANY.email}`} style={{ color: "rgba(255,255,255,.45)" }}>{COMPANY.email}</a></div>
+              <div><a href="tel:0435064886" style={{ color: "rgba(255,255,255,.45)" }}>0435 064 886</a></div>
             </div>
           </div>
 
@@ -50,20 +54,19 @@ export default function Footer({ setPage, setServiceTab }) {
             <h4>{PILLARS[0].label}</h4>
             <ul>
               {PILLARS[0].items.map((item) => (
-                <li key={item}><span onClick={() => goToService(PILLARS[0].tab)}>{item}</span></li>
+                <li key={item}><Link to={PILLARS[0].path}>{item}</Link></li>
               ))}
             </ul>
           </div>
 
-          {/* COL 3 — PROJECT & PRODUCT + QUICK LINKS below */}
+          {/* COL 3 — PROJECT & PRODUCT */}
           <div className="footer-col">
             <h4>{PILLARS[1].label}</h4>
             <ul>
               {PILLARS[1].items.map((item) => (
-                <li key={item}><span onClick={() => goToService(PILLARS[1].tab)}>{item}</span></li>
+                <li key={item}><Link to={PILLARS[1].path}>{item}</Link></li>
               ))}
             </ul>
-
           </div>
 
           {/* COL 4 — AI & AUTOMATION */}
@@ -71,7 +74,7 @@ export default function Footer({ setPage, setServiceTab }) {
             <h4>{PILLARS[2].label}</h4>
             <ul>
               {PILLARS[2].items.map((item) => (
-                <li key={item}><span onClick={() => goToService(PILLARS[2].tab)}>{item}</span></li>
+                <li key={item}><Link to={PILLARS[2].path}>{item}</Link></li>
               ))}
             </ul>
           </div>
@@ -80,21 +83,21 @@ export default function Footer({ setPage, setServiceTab }) {
           <div className="footer-col">
             <h4>📦 Products</h4>
             <ul>
-              <li><a href="https://www.accfino.com" target="_blank" rel="noopener noreferrer">Accfino</a></li>
-              <li><a href="https://linklens.prama-ai.com" target="_blank" rel="noopener noreferrer">LinkLens</a></li>
+              <li><Link to="/products/accfino">Accfino</Link></li>
+              <li><Link to="/products/linklens">LinkLens</Link></li>
               <li>
-                <span onClick={() => setPage("products")}>
-                  HSPayroll <span style={{ fontSize:".7rem", color:"var(--gold)" }}>Soon</span>
-                </span>
+                <Link to="/products/hspayroll">
+                  HSPayroll <span style={{ fontSize: ".7rem", color: "var(--gold)" }}>Soon</span>
+                </Link>
               </li>
             </ul>
             <div style={{ marginTop: 20 }}>
               <h4>Quick Links</h4>
               <div className="footer-quick-links">
-                {[["Home","home"],["About","about"],["Services","services"],["Products","products"],["Contact","contact"]].map(([label, pg], i) => (
+                {QUICK_LINKS.map(([label, path], i) => (
                   <span key={label}>
-                    <span onClick={() => setPage(pg)}>{label}</span>
-                    {i < 4 && <span style={{ color:"rgba(255,255,255,.2)", margin:"0 6px" }}>|</span>}
+                    <Link to={path}>{label}</Link>
+                    {i < QUICK_LINKS.length - 1 && <span style={{ color: "rgba(255,255,255,.2)", margin: "0 6px" }}>|</span>}
                   </span>
                 ))}
               </div>
@@ -107,9 +110,9 @@ export default function Footer({ setPage, setServiceTab }) {
         <div className="footer-bottom">
           <div>© 2026 {COMPANY.name}. All rights reserved.</div>
           <div className="footer-legal">
-            <a href={LEGAL.terms}   target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a>
+            <a href={LEGAL.terms} target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a>
             <a href={LEGAL.privacy} target="_blank" rel="noopener noreferrer">Privacy &amp; Security</a>
-            <a href={LEGAL.legal}   target="_blank" rel="noopener noreferrer">Legal Compliance</a>
+            <a href={LEGAL.legal} target="_blank" rel="noopener noreferrer">Legal Compliance</a>
           </div>
         </div>
 
@@ -117,8 +120,3 @@ export default function Footer({ setPage, setServiceTab }) {
     </footer>
   );
 }
-
-
-
-
-

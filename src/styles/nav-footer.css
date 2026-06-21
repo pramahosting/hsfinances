@@ -51,8 +51,10 @@
 .footer-legal a:hover { color: var(--gold); }
 
 .footer-quick-links { margin-top: 14px; display: flex; flex-wrap: wrap; align-items: center; }
-.footer-quick-links span span { font-size: .72rem; color: rgba(255,255,255,.55); cursor: pointer; transition: .2s; }
-.footer-quick-links span span:hover { color: var(--gold); }
+.footer-quick-links span span,
+.footer-quick-links span a { font-size: .72rem; color: rgba(255,255,255,.55); cursor: pointer; transition: .2s; text-decoration: none; }
+.footer-quick-links span span:hover,
+.footer-quick-links span a:hover { color: var(--gold); }
 
 @media (max-width: 900px) {
   .nav-links { display: none; position: absolute; top: 100px; left: 0; right: 0; flex-direction: column; background: rgba(255,253,240,.99); padding: 16px 24px; gap: 4px; border-top: 1px solid rgba(212,160,33,.2); box-shadow: 0 8px 24px rgba(0,0,0,.08); }

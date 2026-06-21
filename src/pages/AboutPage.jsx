@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { IMG } from "../utils/constants";
 import { useReveal } from "../hooks/useReveal";
+import { usePageMeta } from "../hooks/usePageMeta";
 import "../styles/hero.css";
 import "../styles/components.css";
 import "../styles/layout.css";
@@ -16,6 +17,11 @@ const VALUES = [
 
 export default function AboutPage() {
   useReveal();
+  usePageMeta(
+    "About Us | Headstart Finances Australia — Sydney Accounting & AI Tech Firm",
+    "Learn about Headstart Finances Australia Pty Ltd, a Sydney CBD-based financial services and technology company serving Australian businesses since 2022.",
+    "/about"
+  );
   const [tab, setTab] = useState("story");
 
   return (

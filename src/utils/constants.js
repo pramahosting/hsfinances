@@ -8,8 +8,14 @@ export const COMPANY = {
   established: "2022",
 };
 
-// ─── NAVIGATION PAGES ────────────────────────────────────────────────────────
-export const NAV_PAGES = ["home", "about", "products", "services", "contact"];
+// ─── NAVIGATION LINKS (real routes) ──────────────────────────────────────────
+export const NAV_LINKS = [
+  { label: "Home",     path: "/" },
+  { label: "About",    path: "/about" },
+  { label: "Services", path: "/services" },
+  { label: "Products", path: "/products" },
+  { label: "Contact",  path: "/contact" },
+];
 
 // ─── UNSPLASH FREE-TO-USE IMAGES (Unsplash License — free for commercial use) ─
 export const IMG = {
