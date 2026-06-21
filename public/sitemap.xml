@@ -9,105 +9,24 @@
   </url>
 
   <url>
-    <loc>https://hsfinances.com.au/about</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Services -->
-  <url>
-    <loc>https://hsfinances.com.au/services</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://hsfinances.com.au/services/accounting</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://hsfinances.com.au/services/bookkeeping</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://hsfinances.com.au/services/bas-gst-compliance</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://hsfinances.com.au/services/payroll</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://hsfinances.com.au/services/financial-advisory</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Products -->
-  <url>
-    <loc>https://hsfinances.com.au/products</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://hsfinances.com.au/products/accfino</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://hsfinances.com.au/products/kasar-financial</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Technology / AI solutions -->
-  <url>
-    <loc>https://hsfinances.com.au/technology</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Resources -->
-  <url>
-    <loc>https://hsfinances.com.au/blog</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://hsfinances.com.au/contact</loc>
+    <loc>https://hsfinances.com.au/data/legal/terms_and_conditions.pdf</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.2</priority>
   </url>
 
-  <!-- Legal -->
   <url>
-    <loc>https://hsfinances.com.au/privacy-policy</loc>
+    <loc>https://hsfinances.com.au/data/legal/privacy_and_security.pdf</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.2</priority>
   </url>
+
   <url>
-    <loc>https://hsfinances.com.au/terms-conditions</loc>
+    <loc>https://hsfinances.com.au/data/legal/legal_compliance.pdf</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.2</priority>
   </url>
 
 </urlset>
